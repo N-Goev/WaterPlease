@@ -7,31 +7,17 @@ public class NPCSpawner : MonoBehaviour
 
     private Vector3 NPCSpawnPos = new Vector3(-1.43f, 0f, -7.72f);
 
-    private float finalZ = -13.17f;
-    private float NPCmoveSpeed = 4f;
-
-    public void SpawnNextNPC()
+    public void SpawnNextNPC(Sprite NPCSprite)
     {
-        SpawnNPC();
+        SpawnNPC(NPCSprite);
     }
 
-    private void SpawnNPC()
+    private void SpawnNPC(Sprite NPCSprite)
     {
         GameObject currentNPC = Instantiate(NPCPrefab, NPCSpawnPos, Quaternion.identity);
-
-        StartCoroutine(MoveNPCCoroutine(currentNPC));
-    }
-
-    IEnumerator MoveNPCCoroutine(GameObject currentNPC)
-    {
-        while (currentNPC.transform.position.z > finalZ)
+        if (currentNPC.GetComponentInChildren<SpriteRenderer>())
         {
-            Vector3 currentNPCPos = currentNPC.transform.position;
-            currentNPC.transform.position = new Vector3(currentNPCPos.x, currentNPCPos.y, currentNPCPos.z - (NPCmoveSpeed * Time.deltaTime));
-
-            yield return null;
+            currentNPC.GetComponentInChildren<SpriteRenderer>().sprite = NPCSprite;
         }
-
-        EventBus.Invoke(new NPCReachedTableEvent());
     }
 }

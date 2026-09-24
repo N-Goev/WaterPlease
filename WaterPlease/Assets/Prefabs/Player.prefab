@@ -11,9 +11,6 @@ GameObject:
   - component: {fileID: 5147651706880125289}
   - component: {fileID: 5826933496609258412}
   - component: {fileID: 5548950132069245654}
-  - component: {fileID: 7014287099595092521}
-  - component: {fileID: 3888996305126626132}
-  - component: {fileID: 211073855648006329}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -94,42 +91,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb03ac36fc456a448ae957deacdd276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Grabber
---- !u!114 &7014287099595092521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3939457247488895729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db3379185afa49540a38a5407d8499ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPCManager
---- !u!114 &3888996305126626132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3939457247488895729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa463c22505cc004696ad8da4bd44812, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DocumentSpawner
-  documentPrefab: {fileID: 5424279256179568459, guid: 979bfa96046896d4fb051408102edaff, type: 3}
-  documentSpawnHeight: 0.85
---- !u!114 &211073855648006329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3939457247488895729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 372ec7716b0497541b1083a30e60d4f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPCSpawner
-  NPCPrefab: {fileID: 6603151124069615987, guid: bab8f1f929417a441b6b1938ef3ea151, type: 3}
