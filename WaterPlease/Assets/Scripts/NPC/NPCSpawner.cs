@@ -5,7 +5,7 @@ public class NPCSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject NPCPrefab;
 
-    private Vector3 NPCSpawnPos = new Vector3(-1.43f, 0f, -7.72f);
+    private Vector3 NPCSpawnPos = new Vector3(-2.5f, 0f, -7.72f);
 
     public void SpawnNextNPC(Sprite NPCSprite)
     {
