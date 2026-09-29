@@ -342,5 +342,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318f4df9e4759314791486f3ab396ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueHandler
-  dialogue: []
-  textSpeed: 0.12
+  letterDelay: 0.1

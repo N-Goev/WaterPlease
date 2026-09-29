@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 
 public class DialogueHandler : MonoBehaviour, IPointerDownHandler
 {
-    [SerializeField] private string[] dialogue;
-    [SerializeField] private float textSpeed;
+    [SerializeField] private float letterDelay;
+    private string[] dialogue;
 
     private TextMeshProUGUI textComponent;
     private CanvasGroup canvasGroup;
@@ -59,7 +59,7 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
         foreach (char c in dialogue[index].ToCharArray())
         {
             textComponent.text += c;
-            yield return new WaitForSeconds(textSpeed);
+            yield return new WaitForSeconds(letterDelay);
         }
     }
 
