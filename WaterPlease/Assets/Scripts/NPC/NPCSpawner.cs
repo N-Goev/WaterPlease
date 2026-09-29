@@ -5,19 +5,16 @@ public class NPCSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject NPCPrefab;
 
-    private Vector3 NPCSpawnPos = new Vector3(-2.5f, 0f, -7.72f);
+    private Vector3 NPCSpawnPos = new Vector3(-0.6f, 0.4f, 0f);
 
-    public void SpawnNextNPC(Sprite NPCSprite)
+    public void SpawnNextNPC(NPCScriptableObject npcScriptableObject)
     {
-        SpawnNPC(NPCSprite);
+        SpawnNPC(npcScriptableObject);
     }
 
-    private void SpawnNPC(Sprite NPCSprite)
+    private void SpawnNPC(NPCScriptableObject npcScriptableObject)
     {
         GameObject currentNPC = Instantiate(NPCPrefab, NPCSpawnPos, Quaternion.identity);
-        if (currentNPC.GetComponentInChildren<SpriteRenderer>())
-        {
-            currentNPC.GetComponentInChildren<SpriteRenderer>().sprite = NPCSprite;
-        }
+        currentNPC.GetComponent<NPCHandler>()?.InitNPC(npcScriptableObject);
     }
 }

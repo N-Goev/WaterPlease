@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: NPC1
   m_EditorClassIdentifier: Assembly-CSharp::NPCScriptableObject
   NPCSprite: {fileID: 21300000, guid: 4b2d225175a3d014d8affa85fbeca670, type: 3}
+  Dialogue:
+  - I'm Person1
+  - Why are you clicking on me

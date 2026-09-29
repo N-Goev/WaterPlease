@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5602484791199243680}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.065, y: 0.736, z: 5.67241}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.34946, y: 0.34946, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -115,6 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4341569027718763775}
   - component: {fileID: 5090488614324877708}
+  - component: {fileID: 4131140576654897126}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -131,7 +132,7 @@ Transform:
   m_GameObject: {fileID: 6603151124069615987}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.43, y: 0, z: -13.17}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -150,3 +151,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4077d7d000223d419a35f891ab3a627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCHandler
+--- !u!65 &4131140576654897126
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6603151124069615987}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.0504847, z: 0.1}
+  m_Center: {x: 0, y: 0.0037662387, z: 0}

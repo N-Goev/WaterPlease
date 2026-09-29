@@ -48,8 +48,7 @@ public class LevelManager : MonoBehaviour
     private void SpawnNPC()
     {
         if (CanSpawnNPC()) {
-            Sprite NPCSprite = NPCList[0].NPCSprite;
-            NPCSpawner?.SpawnNextNPC(NPCSprite);
+            NPCSpawner?.SpawnNextNPC(NPCList[0]);
 
             NPCList.RemoveAt(0);
         }

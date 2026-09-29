@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class DialogueHandler : MonoBehaviour, IPointerDownHandler
 {
-    [SerializeField] private string[] lines;
+    [SerializeField] private string[] dialogue;
     [SerializeField] private float textSpeed;
 
     private TextMeshProUGUI textComponent;
@@ -16,14 +16,16 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
 
     private void OnEnable()
     {
-        EventBus.Add<NPCReachedTableEvent>(StartDialogue);
-        EventBus.Add<DocumentStampedEvent>(Hide);
+        EventBus.Add<NPCReachedTableEvent>(OnNPCReachedTable);
+        EventBus.Add<DocumentStampedEvent>(OnDocumentStamped);
+        EventBus.Add<NPCClickedEvent>(OnNPCClicked);
     }
 
     private void OnDisable()
     {
-        EventBus.Remove<NPCReachedTableEvent>(StartDialogue);
-        EventBus.Remove<DocumentStampedEvent>(Hide);
+        EventBus.Remove<NPCReachedTableEvent>(OnNPCReachedTable);
+        EventBus.Remove<DocumentStampedEvent>(OnDocumentStamped);
+        EventBus.Remove<NPCClickedEvent>(OnNPCClicked);
     }
 
     void Awake()
@@ -37,10 +39,16 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
         Hide();
     }
 
-    private void StartDialogue(NPCReachedTableEvent npcReachedTableEvent)
+    private void OnNPCReachedTable(NPCReachedTableEvent npcReachedTableEvent)
+    {
+        StartDialogue(npcReachedTableEvent.NPCScriptableObject.Dialogue);
+    }
+
+    private void StartDialogue(string[] newDialogue)
     {
         textComponent.text = string.Empty;
         index = 0;
+        dialogue = newDialogue;
         StartCoroutine(TypeLine());
 
         Show();
@@ -48,7 +56,7 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
 
     IEnumerator TypeLine()
     {
-        foreach (char c in lines[index].ToCharArray())
+        foreach (char c in dialogue[index].ToCharArray())
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -57,20 +65,30 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (textComponent.text == lines[index])
+        OnInteract();
+    }
+
+    private void OnNPCClicked(NPCClickedEvent npcClickedEvent)
+    {
+        OnInteract();
+    }
+
+    private void OnInteract()
+    {
+        if (textComponent.text == dialogue[index])
         {
             NextLine();
         }
         else
         {
             StopAllCoroutines();
-            textComponent.text = lines[index];
+            textComponent.text = dialogue[index];
         }
     }
 
-    void NextLine()
+    private void NextLine()
     {
-        if(index < lines.Length - 1)
+        if(index < dialogue.Length - 1)
         {
             index++;
             textComponent.text = string.Empty;
@@ -78,9 +96,11 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
         }
         else
         {
-            Hide();
+            //Hide();
         }
     }
+
+    
 
     private void Show()
     {
@@ -89,7 +109,7 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
         canvasGroup.blocksRaycasts = true;
     }
 
-    private void Hide(DocumentStampedEvent documentStampedEvent)
+    private void OnDocumentStamped(DocumentStampedEvent documentStampedEvent)
     {
         Hide();
     }

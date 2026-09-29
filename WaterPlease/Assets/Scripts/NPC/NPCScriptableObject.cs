@@ -4,4 +4,6 @@ using UnityEngine;
 public class NPCScriptableObject : ScriptableObject
 {
     [SerializeField] public Sprite NPCSprite;
+
+    [SerializeField] public string[] Dialogue;
 }

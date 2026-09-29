@@ -2,5 +2,9 @@ using UnityEngine;
 
 public class NPCReachedTableEvent : IGameEvent
 {
-    public NPCReachedTableEvent(){}
+    public NPCScriptableObject NPCScriptableObject;
+
+    public NPCReachedTableEvent(NPCScriptableObject npcScriptableObject) {
+        NPCScriptableObject = npcScriptableObject;
+    }
 }

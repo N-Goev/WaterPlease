@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: NPC4
   m_EditorClassIdentifier: Assembly-CSharp::NPCScriptableObject
   NPCSprite: {fileID: 21300000, guid: 385a94dbe1ad7b449ba19fdc7fff38d1, type: 3}
+  Dialogue:
+  - I'm Person4

@@ -9,7 +9,7 @@ public class DocumentSpawner : MonoBehaviour
 
     private void Awake()
     {
-        documentSpawnPos = new Vector3(-0.07f, documentSpawnHeight, -8.819f);
+        documentSpawnPos = new Vector3(-0.3f, documentSpawnHeight, -8.8f);
     }
 
     public void SpawnNextDocuments()

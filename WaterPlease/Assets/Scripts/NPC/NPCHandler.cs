@@ -1,10 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class NPCHandler : MonoBehaviour
+public class NPCHandler : MonoBehaviour, IPointerDownHandler
 {
-    private float finalZ = -13.17f;
+    private float finalZ = -7f; 
     private float moveSpeed = 4f;
+
+    NPCScriptableObject npcScriptableObject;
 
     private void OnEnable()
     {
@@ -19,6 +22,12 @@ public class NPCHandler : MonoBehaviour
     private void Start()
     {
         StartCoroutine(MoveNPCCoroutine());
+    }
+
+    public void InitNPC(NPCScriptableObject npcScriptableObject)
+    {
+        this.npcScriptableObject = npcScriptableObject;
+        GetComponentInChildren<SpriteRenderer>().sprite = npcScriptableObject.NPCSprite;
     }
 
     private void OnDocumentStamped(DocumentStampedEvent documentStampedEvent)
@@ -36,6 +45,11 @@ public class NPCHandler : MonoBehaviour
             yield return null;
         }
 
-        EventBus.Invoke(new NPCReachedTableEvent());
+        EventBus.Invoke(new NPCReachedTableEvent(npcScriptableObject));
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        EventBus.Invoke(new NPCClickedEvent());
     }
 }
