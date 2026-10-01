@@ -4,7 +4,7 @@ using UnityEngine;
 public class DocumentSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject documentPrefab;
-    private float documentSpawnHeight = 0.85f;
+    [SerializeField] private float documentSpawnHeight;
     private Vector3 documentSpawnPos;
 
     private void Awake()

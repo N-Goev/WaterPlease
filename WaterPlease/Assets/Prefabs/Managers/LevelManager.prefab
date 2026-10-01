@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCSpawner
   NPCPrefab: {fileID: 6603151124069615987, guid: bab8f1f929417a441b6b1938ef3ea151, type: 3}
-  NPCSpawnPos: {x: 0, y: 0, z: 0}
 --- !u!114 &5015304401036744154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DocumentSpawner
   documentPrefab: {fileID: 5424279256179568459, guid: 979bfa96046896d4fb051408102edaff, type: 3}
+  documentSpawnHeight: 0.78
 --- !u!114 &1703553659658358368
 MonoBehaviour:
   m_ObjectHideFlags: 0
