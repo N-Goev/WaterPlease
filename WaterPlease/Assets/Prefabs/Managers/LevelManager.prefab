@@ -59,8 +59,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa463c22505cc004696ad8da4bd44812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DocumentSpawner
-  documentPrefab: {fileID: 5424279256179568459, guid: 979bfa96046896d4fb051408102edaff, type: 3}
-  documentSpawnHeight: 0.78
+  WaterCredentialsPrefab: {fileID: 5424279256179568459, guid: 979bfa96046896d4fb051408102edaff, type: 3}
+  waterUseElementPrefab: {fileID: 5299578687002967589, guid: 49f710af5643fef4ebbb5923657cabbe, type: 3}
+  waterRequestDocumentPrefab: {fileID: 5424279256179568459, guid: 94271ee63f4802d468ae66c05f131875, type: 3}
+  spawnHeight: 0.78
 --- !u!114 &1703553659658358368
 MonoBehaviour:
   m_ObjectHideFlags: 0

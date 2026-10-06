@@ -15,3 +15,9 @@ MonoBehaviour:
   NPCSprite: {fileID: 21300000, guid: 18e81b3091254dc4ead71451555e51c3, type: 3}
   Dialogue:
   - I'm Person2
+  Name: Ivanka
+  Age: 24
+  Request: I'm thirsty
+  TopUsesOfWater:
+  - key: Drinking water
+    value: 100

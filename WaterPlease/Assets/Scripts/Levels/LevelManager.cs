@@ -76,12 +76,12 @@ public class LevelManager : MonoBehaviour
     // Spawning documents
     private void OnNPCReachedTable(NPCReachedTableEvent npcReachedTableEvent)
     {
-        SpawnDocuments();
+        SpawnDocuments(npcReachedTableEvent);
     }
 
-    private void SpawnDocuments()
+    private void SpawnDocuments(NPCReachedTableEvent npcReachedTableEvent)
     {
-        documentSpawner?.SpawnNextDocuments();
+        documentSpawner?.SpawnNextDocuments(npcReachedTableEvent);
     }
 
     private void TryLoadNextScene()

@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class DocumentStampedEvent : IGameEvent
 {
-    public DocumentHandler.DocumentState DocumentState {  get; }
+    public WaterRequestHandler.DocumentState DocumentState {  get; }
 
-    public DocumentStampedEvent(DocumentHandler.DocumentState documentState)
+    public DocumentStampedEvent(WaterRequestHandler.DocumentState documentState)
     {
         DocumentState = documentState;
     }

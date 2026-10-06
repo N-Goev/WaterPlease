@@ -37,7 +37,9 @@ public class Grabber : MonoBehaviour
             return;
         }
 
-        if (!hit.collider.CompareTag("DragAndDrop"))
+        Grabbable currentGrabbable = hit.collider.GetComponent<Grabbable>();
+
+        if (!currentGrabbable)
         {
             return;
         }
@@ -54,6 +56,8 @@ public class Grabber : MonoBehaviour
 
         selectedObject = currentObject;
         Cursor.visible = false;
+
+        currentGrabbable.OnGrab();
     }
 
     private void OnDrag()
@@ -77,8 +81,11 @@ public class Grabber : MonoBehaviour
             return;
         }
 
+
         selectedObject.useGravity = true;
         selectedObject.isKinematic = false;
+
+        selectedObject.GetComponent<Grabbable>()?.OnDrop();
 
         selectedObject = null;
         Cursor.visible = true;

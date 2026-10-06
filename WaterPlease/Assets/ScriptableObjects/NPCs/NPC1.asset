@@ -16,3 +16,11 @@ MonoBehaviour:
   Dialogue:
   - I'm Person1
   - Why are you clicking on me
+  Name: Willem
+  Age: 45
+  Request: Could I have some water to wash up and keep myself clean?
+  TopUsesOfWater:
+  - key: Shower
+    value: 30
+  - key: Bathing
+    value: 15
