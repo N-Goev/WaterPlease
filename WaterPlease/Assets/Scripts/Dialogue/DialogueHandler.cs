@@ -14,11 +14,15 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
 
     private int index;
 
+    private bool CanShowDialogue = true;
+
     private void OnEnable()
     {
         EventBus.Add<NPCReachedTableEvent>(OnNPCReachedTable);
         EventBus.Add<DocumentStampedEvent>(OnDocumentStamped);
         EventBus.Add<NPCClickedEvent>(OnNPCClicked);
+        EventBus.Add<ZoomingInEvent>(OnZoomedIn);
+        EventBus.Add<ZoomingOutEvent>(OnZoomedOut);
     }
 
     private void OnDisable()
@@ -26,6 +30,8 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
         EventBus.Remove<NPCReachedTableEvent>(OnNPCReachedTable);
         EventBus.Remove<DocumentStampedEvent>(OnDocumentStamped);
         EventBus.Remove<NPCClickedEvent>(OnNPCClicked);
+        EventBus.Remove<ZoomingInEvent>(OnZoomedIn);
+        EventBus.Remove<ZoomingOutEvent>(OnZoomedOut);
     }
 
     void Awake()
@@ -100,13 +106,14 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
         }
     }
 
-    
-
     private void Show()
     {
-        canvasGroup.alpha = 1f;
-        canvasGroup.interactable = true;
-        canvasGroup.blocksRaycasts = true;
+        if (CanShowDialogue)
+        {
+            canvasGroup.alpha = 1f;
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
+        } 
     }
 
     private void OnDocumentStamped(DocumentStampedEvent documentStampedEvent)
@@ -119,5 +126,16 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
         canvasGroup.alpha = 0f;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
+    }
+
+    private void OnZoomedIn(ZoomingInEvent zoomingInEvent) {
+        CanShowDialogue = false;
+        Hide();
+    }
+
+    private void OnZoomedOut(ZoomingOutEvent zoomingOutEvent)
+    {
+        CanShowDialogue = true;
+        Show();
     }
 }
