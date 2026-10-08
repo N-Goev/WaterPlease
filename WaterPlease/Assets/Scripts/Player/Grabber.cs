@@ -5,6 +5,8 @@ public class Grabber : MonoBehaviour
 {
     private Rigidbody selectedObject;
 
+    private Grabbable currentGrabbable = null;
+
     void Update()
     {
         OnDrag();
@@ -37,7 +39,7 @@ public class Grabber : MonoBehaviour
             return;
         }
 
-        Grabbable currentGrabbable = hit.collider.GetComponent<Grabbable>();
+        currentGrabbable = hit.collider.GetComponent<Grabbable>();
 
         if (!currentGrabbable)
         {
@@ -72,6 +74,8 @@ public class Grabber : MonoBehaviour
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
 
         selectedObject.transform.position = new Vector3(worldPosition.x, worldPosition.y, selectedObject.transform.position.z);
+
+        currentGrabbable.OnDrag();
     }
 
     private void OnDrop()
@@ -81,12 +85,12 @@ public class Grabber : MonoBehaviour
             return;
         }
 
-
         selectedObject.useGravity = true;
         selectedObject.isKinematic = false;
 
-        selectedObject.GetComponent<Grabbable>()?.OnDrop();
+        currentGrabbable.OnDrop();
 
+        currentGrabbable = null;
         selectedObject = null;
         Cursor.visible = true;
     }

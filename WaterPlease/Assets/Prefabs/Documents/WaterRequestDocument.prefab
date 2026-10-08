@@ -675,6 +675,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ced50f225d4d1449921e3a24b5b32f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterRequestHandler
+  meshRenderer: {fileID: 8979623597399620715}
+  outlineMaterial: {fileID: 2100000, guid: 1f99f89df1cda024b82c5cac1a61b183, type: 2}
 --- !u!1 &6356054734929956254
 GameObject:
   m_ObjectHideFlags: 0
