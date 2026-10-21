@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class Inspectable : MonoBehaviour, IPointerDownHandler
 {
-    private float distanceFromCamera = 0.5f;
+    [SerializeField] private float distanceFromCamera = 0.5f;
 
     private enum InspectingState {NotInspecting, Inspecting}
     private InspectingState inspectingState = InspectingState.NotInspecting;
@@ -71,6 +71,7 @@ public class Inspectable : MonoBehaviour, IPointerDownHandler
         gameObject.transform.rotation = Quaternion.LookRotation(lookDirection) * Quaternion.Euler(-90, 0, 0);
 
         ChangeState(InspectingState.Inspecting);
+        EventBus.Invoke(new ZoomingInEvent());
     }
 
     public void PutDown()
@@ -79,5 +80,6 @@ public class Inspectable : MonoBehaviour, IPointerDownHandler
         transform.rotation = originalRotation;
 
         ChangeState(InspectingState.NotInspecting);
+        EventBus.Invoke(new ZoomingOutEvent());
     }
 }

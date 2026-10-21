@@ -6,23 +6,17 @@ using UnityEngine.UI;
 
 public class DocumentSpawner : MonoBehaviour
 {
+    [SerializeField] private GameObject UIListElementPrefab;
+
     [Header("Water Credentials")]
     [SerializeField] private GameObject WaterCredentialsPrefab;
-    [SerializeField] private GameObject waterUseElementPrefab;
 
     [Header("Water Request")]
     [SerializeField] private GameObject waterRequestDocumentPrefab;
 
     [Header("Spawn Properties")]
-    [SerializeField] private float spawnHeight;
-    private Vector3 documentSpawnPos;
-    private Vector3 waterRequestDocumentSpawnPos;
-
-    private void Awake()
-    {
-        documentSpawnPos = new Vector3(-0.3f, spawnHeight, -8.8f);
-        waterRequestDocumentSpawnPos = new Vector3(0f, spawnHeight, -8.8f);
-    }
+    [SerializeField] private Vector3 document1SpawnPos;
+    [SerializeField] private Vector3 document2SpawnPos;
 
     public void SpawnNextDocuments(NPCReachedTableEvent npcReachedTableEvent)
     {
@@ -31,52 +25,69 @@ public class DocumentSpawner : MonoBehaviour
 
     private void SpawnDocuments(NPCScriptableObject npcScriptableObject)
     {
-        GameObject waterCredentialsInstance = Instantiate(WaterCredentialsPrefab, documentSpawnPos, Quaternion.identity);
-        GameObject waterRequestInstance = Instantiate(waterRequestDocumentPrefab, waterRequestDocumentSpawnPos, Quaternion.identity);
+        GameObject waterCredentialsInstance = Instantiate(WaterCredentialsPrefab, document1SpawnPos, Quaternion.identity);
+        GameObject waterRequestInstance = Instantiate(waterRequestDocumentPrefab, document2SpawnPos, Quaternion.identity);
 
         UpdateWaterCredentialsText(waterCredentialsInstance, npcScriptableObject);
         UpdateWaterRequestText(waterRequestInstance, npcScriptableObject);
     }
 
-    private void UpdateWaterCredentialsText(GameObject waterCredentialsInstance, NPCScriptableObject npcScriptableObject)
+    private void UpdateWaterRequestText(GameObject waterRequestInstance, NPCScriptableObject npcScriptableObject)
     {
-        VerticalLayoutGroup ListOfWaterUsesCanvas = waterCredentialsInstance.GetComponentInChildren<VerticalLayoutGroup>();
+        TextMeshProUGUI[] TextElements = waterRequestInstance.GetComponentsInChildren<TextMeshProUGUI>();
+        if (TextElements.Length == 5)
+        {
+            TextElements[0].text = npcScriptableObject.WaterRequest;
+            TextElements[1].text = npcScriptableObject.Name + " " + npcScriptableObject.Surname;
+            TextElements[2].text = npcScriptableObject.Residency;
+            TextElements[3].text = npcScriptableObject.DateAndPlace;
+            TextElements[4].text = npcScriptableObject.Sign;
+        }
 
-        if (!ListOfWaterUsesCanvas)
+        VerticalLayoutGroup[] Lists = waterRequestInstance.GetComponentsInChildren<VerticalLayoutGroup>();
+
+        if (Lists.Length < 2)
         {
             Debug.LogError("Missing Vertical Layout Group in document prefab");
             return;
         }
 
-        Dictionary<string, int> TopUsesOfWater = npcScriptableObject.TopUsesOfWater;
-        int totalWaterUsed = 0;
+        List<string> reasonsForWaterRequest = npcScriptableObject.ReasonsForWaterRequest;
+        foreach (string reason in reasonsForWaterRequest) {
+            GameObject reasonInstance = Instantiate(UIListElementPrefab, Lists[0].transform);
+            TextMeshProUGUI reasonText = reasonInstance.GetComponent<TextMeshProUGUI>();
 
+            if (reasonText)
+            {
+                reasonText.text = reason;
+            }
+        }
+
+        Dictionary<string, int> TopUsesOfWater = npcScriptableObject.TopUsesOfWater;
         foreach(KeyValuePair<string, int> currentPair in TopUsesOfWater) 
         {
-            GameObject waterUseInstance = Instantiate(waterUseElementPrefab, ListOfWaterUsesCanvas.transform);
+            GameObject waterUseInstance = Instantiate(UIListElementPrefab, Lists[1].transform);
             TextMeshProUGUI waterUseText = waterUseInstance.GetComponent<TextMeshProUGUI>();
 
             if (waterUseText) {
                 waterUseText.text = currentPair.Key + " - " + currentPair.Value + "L";
-                totalWaterUsed += currentPair.Value;
             }
-        }
-
-        TextMeshProUGUI[] TextElements = waterCredentialsInstance.GetComponentsInChildren<TextMeshProUGUI>();
-        if (TextElements.Length > 1) {
-            TextElements[1].text = "Used: " + totalWaterUsed + "L"; 
         }
     }
 
-    private void UpdateWaterRequestText(GameObject waterRequestInstance, NPCScriptableObject npcScriptableObject)
+    private void UpdateWaterCredentialsText(GameObject waterCredentialsInstance, NPCScriptableObject npcScriptableObject)
     {
-        TextMeshProUGUI[] TextElements = waterRequestInstance.GetComponentsInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI[] TextElements = waterCredentialsInstance.GetComponentsInChildren<TextMeshProUGUI>();
 
-        if(TextElements.Length == 3)
+        if(TextElements.Length == 7)
         {
-            TextElements[0].text = "Name: " + npcScriptableObject.Name;
-            TextElements[1].text = "Age: " + npcScriptableObject.Age;
-            TextElements[2].text = "Request: " + npcScriptableObject.Request;
+            TextElements[0].text = npcScriptableObject.Surname;
+            TextElements[1].text = npcScriptableObject.Name;
+            TextElements[2].text = npcScriptableObject.Sex.ToString();
+            TextElements[3].text = npcScriptableObject.Nationality;
+            TextElements[4].text = npcScriptableObject.DateOfBirth;
+            TextElements[5].text = npcScriptableObject.DateOfIssue;
+            TextElements[6].text = npcScriptableObject.DateOfExpiry;
         }
     }
 }

@@ -4,15 +4,31 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NPC", menuName = "ScriptableObjects/NPCScriptableObject")]
 public class NPCScriptableObject : ScriptableObject
 {
+    public enum SexOption { M, F, OTH}
+
     public Sprite NPCSprite;
 
     public string[] Dialogue;
 
+    [Header("Water Credentials")]
     public string Name;
-    public string Age;
-    public string Request;
+    public string Surname;
+    public SexOption Sex;
+    public string Nationality;
+    public string DateOfBirth;
+    public string DateOfIssue;
+    public string DateOfExpiry;
+
+    [Header("Water Request")]
+
+    public string WaterRequest;
+    public List<string> ReasonsForWaterRequest;
+    public string Residency;
 
     [SerializeField]
     [DictionaryDisplay(keyLabel = "Use", valueLabel = "Litres of water")]
     public Dictionary<string, int> TopUsesOfWater;
+
+    public string DateAndPlace;
+    public string Sign;
 }

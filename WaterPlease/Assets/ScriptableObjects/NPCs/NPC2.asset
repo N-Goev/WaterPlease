@@ -16,8 +16,18 @@ MonoBehaviour:
   Dialogue:
   - I'm Person2
   Name: Ivanka
-  Age: 24
-  Request: I'm thirsty
+  Surname: Ivanova
+  Sex: 1
+  Nationality: Lithuanian
+  DateOfBirth: 03.07.2043
+  DateOfIssue: 28.07.2063
+  DateOfExpiry: 28.07.2073
+  WaterRequest: 100L
+  ReasonsForWaterRequest:
+  - I'm thirsty
+  Residency: Logehen
   TopUsesOfWater:
   - key: Drinking water
     value: 100
+  DateAndPlace: 12.02.2068 Nedschee
+  Sign: IV

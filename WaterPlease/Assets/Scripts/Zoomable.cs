@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Zoomable : MonoBehaviour, IPointerDownHandler
 {
-    private float distanceFromObject = 0.4f;
+    [SerializeField] private float distanceFromObject = 0.2f;
     private float zoomInTime = 0.4f;
     private float zoomOutTime = 0.3f;
 

@@ -17,10 +17,21 @@ MonoBehaviour:
   - I'm Person1
   - Why are you clicking on me
   Name: Willem
-  Age: 45
-  Request: Could I have some water to wash up and keep myself clean?
+  Surname: Van der Hoek
+  Sex: 0
+  Nationality: Dutch
+  DateOfBirth: 03.07.2022
+  DateOfIssue: 12.08.2065
+  DateOfExpiry: 12.08.2065
+  WaterRequest: 50L
+  ReasonsForWaterRequest:
+  - For shower
+  - For cooking
+  Residency: Nedschee
   TopUsesOfWater:
   - key: Shower
     value: 30
   - key: Bathing
     value: 15
+  DateAndPlace: 12.02.2068 Nedschee
+  Sign: WillemVdH
