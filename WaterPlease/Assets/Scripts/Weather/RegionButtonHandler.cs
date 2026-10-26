@@ -3,10 +3,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+public enum MapRegion { CenterNedschee, NorthNedschee, SouthNedschee, EastNedschee, WestNedschee, CenterLogehen, SouthLogehen, EastLogehen }
+
 public class RegionButtonHandler : MonoBehaviour, IPointerDownHandler
 {
-    public enum MapRegion {CenterNedschee, NorthNedschee, SouthNedschee, EastNedschee, WestNedschee, CenterLogehen, SouthLogehen, EastLogehen}
-
     public MapRegion region;
 
     private Image regionImage;

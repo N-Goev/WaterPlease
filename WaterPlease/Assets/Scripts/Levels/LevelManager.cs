@@ -34,6 +34,8 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        EventBus.Invoke(new LoadLevelInfoEvent(Level!));
+
         StartCoroutine(SpawnNPCCoroutine(0));
     }
 

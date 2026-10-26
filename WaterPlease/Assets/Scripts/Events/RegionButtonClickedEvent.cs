@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class RegionButtonClickedEvent : IGameEvent
 {
-    public RegionButtonHandler.MapRegion Region { get; }
+    public MapRegion Region { get; }
 
-    public RegionButtonClickedEvent(RegionButtonHandler.MapRegion region)
+    public RegionButtonClickedEvent(MapRegion region)
     {
         Region = region;
     }
