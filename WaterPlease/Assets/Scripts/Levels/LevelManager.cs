@@ -24,18 +24,23 @@ public class LevelManager : MonoBehaviour
     {
         EventBus.Add<DocumentStampedEvent>(OnDocumentStamped);
         EventBus.Add<NPCReachedTableEvent>(OnNPCReachedTable);
+        EventBus.Add<FadeAnimationCompleteEvent>(OnLevelStart);
     }
 
     private void OnDisable()
     {
         EventBus.Remove<DocumentStampedEvent>(OnDocumentStamped);
         EventBus.Remove<NPCReachedTableEvent>(OnNPCReachedTable);
+        EventBus.Remove<FadeAnimationCompleteEvent>(OnLevelStart);
     }
 
     private void Start()
     {
-        EventBus.Invoke(new LoadLevelInfoEvent(Level!));
+        EventBus.Invoke(new LoadLevelInfoEvent(Level));
+    }
 
+    private void OnLevelStart(FadeAnimationCompleteEvent fadeAnimationCompleteEvent)
+    {
         StartCoroutine(SpawnNPCCoroutine(0));
     }
 
