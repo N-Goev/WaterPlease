@@ -23,7 +23,6 @@ public class RegionButtonHandler : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        print("Pressed " + region.ToString());
         EventBus.Invoke(new RegionButtonClickedEvent(region));
     }
 }

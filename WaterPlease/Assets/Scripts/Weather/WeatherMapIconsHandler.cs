@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -60,18 +61,36 @@ public class WeatherMapIconsHandler : MonoBehaviour
         }
     }
 
-    void UpdateWeatherImage(Image weatherImage, WeatherType weatherType)
+    public void UpdateWeatherImage(Image weatherImage, WeatherType weatherType)
     {
         switch (weatherType)
         {
             case WeatherType.Sunny:
-                weatherImage.sprite = sunnyIcon!;
+                weatherImage.sprite = sunnyIcon;
                 break;
             case WeatherType.Cloudy:
-                weatherImage.sprite = cloudyIcon!;
+                weatherImage.sprite = cloudyIcon;
                 break;
             case WeatherType.Rainy:
-                weatherImage.sprite = rainyIcon!;
+                weatherImage.sprite = rainyIcon;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void UpdateWeatherText(TextMeshProUGUI weatherText, WeatherType weatherType)
+    {
+        switch (weatherType)
+        {
+            case WeatherType.Sunny:
+                weatherText.text = "Sunny";
+                break;
+            case WeatherType.Cloudy:
+                weatherText.text = "Cloudy";
+                break;
+            case WeatherType.Rainy:
+                weatherText.text = "Rainy";
                 break;
             default:
                 break;

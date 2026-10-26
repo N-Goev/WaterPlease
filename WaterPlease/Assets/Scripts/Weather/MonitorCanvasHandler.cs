@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RegionButtonsGroupHandler : MonoBehaviour
+public class MonitorCanvasHandler : MonoBehaviour
 {
     private CanvasGroup canvasGroup;
 
@@ -19,9 +19,15 @@ public class RegionButtonsGroupHandler : MonoBehaviour
     private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
+        DisableMonitorInteraction();
     }
 
     private void OnOpenMonitor(ZoomingInEvent zoomingInEvent)
+    {
+        EnableMonitorInteraction();
+    }
+
+    private void EnableMonitorInteraction()
     {
         if (canvasGroup)
         {
@@ -31,6 +37,11 @@ public class RegionButtonsGroupHandler : MonoBehaviour
     }
 
     private void OnCloseMonitor(ZoomingOutEvent zoomingOutEvent)
+    {
+        DisableMonitorInteraction();
+    }
+
+    private void DisableMonitorInteraction()
     {
         if (canvasGroup)
         {
