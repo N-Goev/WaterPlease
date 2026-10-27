@@ -10,7 +10,7 @@ public class NPCScriptableObject : ScriptableObject
 
     public string[] Dialogue;
 
-    [Header("Water Credentials")]
+    [Header("ID")]
     public string Name;
     public string Surname;
     public SexOption Sex;

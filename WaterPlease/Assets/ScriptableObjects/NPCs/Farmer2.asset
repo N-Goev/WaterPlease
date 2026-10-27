@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da6dfa1a9138964bbe29871944cc5d9, type: 3}
+  m_Name: Farmer2
+  m_EditorClassIdentifier: Assembly-CSharp::NPCScriptableObject
+  NPCSprite: {fileID: 21300000, guid: 385a94dbe1ad7b449ba19fdc7fff38d1, type: 3}
+  Dialogue:
+  - "My animals are dying if I don\u2019t give them any water"
+  - I need some water for them fast
+  Name: Nikola
+  Surname: ter Meer
+  Sex: 0
+  Nationality: The Netherlands
+  DateOfBirth: 3 APR/APR 2031
+  DateOfIssue: 24 NOV/NOV 2061
+  DateOfExpiry: 24 NOV/NOV 2066
+  WaterRequest: 300L
+  ReasonsForWaterRequest:
+  - Ensure animals stay healthy
+  Residency: North Logehem
+  TopUsesOfWater:
+  - key: Crops
+    value: 12000
+  - key: Animals
+    value: 1000
+  - key: Showering
+    value: 350
+  DateAndPlace: 20 FEB/FEB 2068 Nedschee
+  Sign: N

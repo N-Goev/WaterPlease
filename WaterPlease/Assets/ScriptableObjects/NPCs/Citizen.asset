@@ -10,28 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9da6dfa1a9138964bbe29871944cc5d9, type: 3}
-  m_Name: NPC1
+  m_Name: Citizen
   m_EditorClassIdentifier: Assembly-CSharp::NPCScriptableObject
   NPCSprite: {fileID: 21300000, guid: 4b2d225175a3d014d8affa85fbeca670, type: 3}
   Dialogue:
-  - I'm Person1
-  - Why are you clicking on me
-  Name: Willem
-  Surname: Van der Hoek
+  - Yo man, apparently you hafta go here to get water nowadays.
+  - Just water man why you inspecting?
+  - Get off!
+  Name: Aref
+  Surname: Kok
   Sex: 0
-  Nationality: Dutch
-  DateOfBirth: 03.07.2022
-  DateOfIssue: 12.08.2065
-  DateOfExpiry: 12.08.2065
-  WaterRequest: 50L
+  Nationality: The Netherlands
+  DateOfBirth: 14 APR/APR 2041
+  DateOfIssue: 9 JUN/JUN 2046
+  DateOfExpiry: 9 JUN/JUN 2056
+  WaterRequest: 75L
   ReasonsForWaterRequest:
-  - For shower
-  - For cooking
+  - Shower
   Residency: Nedschee
   TopUsesOfWater:
   - key: Shower
+    value: 300
+  - key: Cooking
+    value: 40
+  - key: Cleaning
     value: 30
-  - key: Bathing
-    value: 15
-  DateAndPlace: 12.02.2068 Nedschee
-  Sign: WillemVdH
+  DateAndPlace: 12 FEB/FEB 2068 Nedschee
+  Sign: Aref

@@ -13,16 +13,241 @@ MonoBehaviour:
   m_Name: Level3
   m_EditorClassIdentifier: Assembly-CSharp::LevelScriptableObject
   NPCList:
-  - {fileID: 11400000, guid: 001f092f024157a4aa6a69ec85714de5, type: 2}
-  - {fileID: 11400000, guid: 9ace047c1276cea4f810d7cb1ded368d, type: 2}
-  - {fileID: 11400000, guid: 51bf972427be39b45b930968f8e2fb17, type: 2}
-  - {fileID: 11400000, guid: 3159b1b188fd2e248a97192b303e0b6e, type: 2}
-  CenterNedscheeWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  NorthNedscheeWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  SouthNedscheeWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  EastNedscheeWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  WestNedscheeWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  CenterLogehenWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  SouthLogehenWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  EastLogehenWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  DayOfTheWeek: 1
+  - {fileID: 11400000, guid: 5f73da0db43d12f4c9d75664a9115baa, type: 2}
+  - {fileID: 11400000, guid: 4631348196d89134e89aa594f3be2d65, type: 2}
+  - {fileID: 11400000, guid: 3498a5629597e8d41990b3fb0f5ade2f, type: 2}
+  - {fileID: 11400000, guid: 51a2a58af3d33ae498ba931b6b6a65af, type: 2}
+  - {fileID: 11400000, guid: c063ccfa2e4fc1746b2e7713d3ed0aee, type: 2}
+  DayOfTheWeek: 3
+  CenterNedscheeWeeklyWeather:
+  - weatherType: 1
+    maxTemperature: 24
+    minTemperature: 14
+    percent: 13
+  - weatherType: 0
+    maxTemperature: 26
+    minTemperature: 15
+    percent: 3
+  - weatherType: 0
+    maxTemperature: 27
+    minTemperature: 16
+    percent: 2
+  - weatherType: 2
+    maxTemperature: 22
+    minTemperature: 14
+    percent: 46
+  - weatherType: 0
+    maxTemperature: 25
+    minTemperature: 16
+    percent: 5
+  - weatherType: 0
+    maxTemperature: 28
+    minTemperature: 18
+    percent: 1
+  - weatherType: 0
+    maxTemperature: 29
+    minTemperature: 19
+    percent: 2
+  NorthNedscheeWeeklyWeather:
+  - weatherType: 0
+    maxTemperature: 24
+    minTemperature: 13
+    percent: 5
+  - weatherType: 1
+    maxTemperature: 23
+    minTemperature: 14
+    percent: 16
+  - weatherType: 0
+    maxTemperature: 26
+    minTemperature: 15
+    percent: 3
+  - weatherType: 0
+    maxTemperature: 27
+    minTemperature: 16
+    percent: 2
+  - weatherType: 2
+    maxTemperature: 23
+    minTemperature: 15
+    percent: 39
+  - weatherType: 0
+    maxTemperature: 27
+    minTemperature: 17
+    percent: 4
+  - weatherType: 0
+    maxTemperature: 29
+    minTemperature: 19
+    percent: 1
+  SouthNedscheeWeeklyWeather:
+  - weatherType: 0
+    maxTemperature: 29
+    minTemperature: 17
+    percent: 1
+  - weatherType: 0
+    maxTemperature: 30
+    minTemperature: 18
+    percent: 2
+  - weatherType: 1
+    maxTemperature: 27
+    minTemperature: 17
+    percent: 15
+  - weatherType: 0
+    maxTemperature: 31
+    minTemperature: 19
+    percent: 1
+  - weatherType: 0
+    maxTemperature: 32
+    minTemperature: 20
+    percent: 2
+  - weatherType: 0
+    maxTemperature: 33
+    minTemperature: 21
+    percent: 1
+  - weatherType: 2
+    maxTemperature: 27
+    minTemperature: 19
+    percent: 37
+  EastNedscheeWeeklyWeather:
+  - weatherType: 0
+    maxTemperature: 26
+    minTemperature: 15
+    percent: 2
+  - weatherType: 0
+    maxTemperature: 28
+    minTemperature: 16
+    percent: 2
+  - weatherType: 2
+    maxTemperature: 24
+    minTemperature: 16
+    percent: 41
+  - weatherType: 0
+    maxTemperature: 27
+    minTemperature: 17
+    percent: 4
+  - weatherType: 1
+    maxTemperature: 26
+    minTemperature: 17
+    percent: 12
+  - weatherType: 0
+    maxTemperature: 30
+    minTemperature: 19
+    percent: 1
+  - weatherType: 0
+    maxTemperature: 31
+    minTemperature: 20
+    percent: 2
+  WestNedscheeWeeklyWeather:
+  - weatherType: 1
+    maxTemperature: 24
+    minTemperature: 14
+    percent: 12
+  - weatherType: 0
+    maxTemperature: 26
+    minTemperature: 15
+    percent: 3
+  - weatherType: 0
+    maxTemperature: 28
+    minTemperature: 16
+    percent: 1
+  - weatherType: 0
+    maxTemperature: 27
+    minTemperature: 17
+    percent: 5
+  - weatherType: 2
+    maxTemperature: 24
+    minTemperature: 16
+    percent: 44
+  - weatherType: 0
+    maxTemperature: 29
+    minTemperature: 18
+    percent: 2
+  - weatherType: 0
+    maxTemperature: 30
+    minTemperature: 20
+    percent: 1
+  CenterLogehenWeeklyWeather:
+  - weatherType: 0
+    maxTemperature: 25
+    minTemperature: 15
+    percent: 3
+  - weatherType: 1
+    maxTemperature: 24
+    minTemperature: 14
+    percent: 12
+  - weatherType: 0
+    maxTemperature: 27
+    minTemperature: 16
+    percent: 2
+  - weatherType: 2
+    maxTemperature: 23
+    minTemperature: 15
+    percent: 38
+  - weatherType: 0
+    maxTemperature: 26
+    minTemperature: 16
+    percent: 5
+  - weatherType: 0
+    maxTemperature: 29
+    minTemperature: 19
+    percent: 1
+  - weatherType: 0
+    maxTemperature: 30
+    minTemperature: 20
+    percent: 2
+  SouthLogehenWeeklyWeather:
+  - weatherType: 0
+    maxTemperature: 28
+    minTemperature: 17
+    percent: 2
+  - weatherType: 1
+    maxTemperature: 26
+    minTemperature: 16
+    percent: 11
+  - weatherType: 0
+    maxTemperature: 29
+    minTemperature: 18
+    percent: 1
+  - weatherType: 0
+    maxTemperature: 30
+    minTemperature: 19
+    percent: 3
+  - weatherType: 0
+    maxTemperature: 31
+    minTemperature: 20
+    percent: 2
+  - weatherType: 2
+    maxTemperature: 26
+    minTemperature: 18
+    percent: 35
+  - weatherType: 0
+    maxTemperature: 32
+    minTemperature: 21
+    percent: 1
+  EastLogehenWeeklyWeather:
+  - weatherType: 0
+    maxTemperature: 26
+    minTemperature: 15
+    percent: 4
+  - weatherType: 0
+    maxTemperature: 27
+    minTemperature: 16
+    percent: 2
+  - weatherType: 1
+    maxTemperature: 25
+    minTemperature: 15
+    percent: 14
+  - weatherType: 0
+    maxTemperature: 28
+    minTemperature: 17
+    percent: 3
+  - weatherType: 2
+    maxTemperature: 24
+    minTemperature: 16
+    percent: 42
+  - weatherType: 0
+    maxTemperature: 29
+    minTemperature: 19
+    percent: 1
+  - weatherType: 0
+    maxTemperature: 31
+    minTemperature: 20
+    percent: 2

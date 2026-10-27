@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da6dfa1a9138964bbe29871944cc5d9, type: 3}
+  m_Name: Student
+  m_EditorClassIdentifier: Assembly-CSharp::NPCScriptableObject
+  NPCSprite: {fileID: 21300000, guid: 385a94dbe1ad7b449ba19fdc7fff38d1, type: 3}
+  Dialogue:
+  - We have invented something new
+  - We really want to test it
+  - But our teacher said that we had to ask permission for the water
+  Name: Lin
+  Surname: te Beek
+  Sex: 1
+  Nationality: The Netherlands
+  DateOfBirth: 30 AUG/AUG 2051
+  DateOfIssue: 2 JUL/JUL 2066
+  DateOfExpiry: 2 JUL/JUL 2071
+  WaterRequest: 100L
+  ReasonsForWaterRequest:
+  - College experiment involving laboratory testing
+  Residency: South Nedschee
+  TopUsesOfWater:
+  - key: Experiments
+    value: 3200
+  - key: Cleaning
+    value: 500
+  - key: Drinking
+    value: 5000
+  DateAndPlace: 20 FEB/FEB 2068 Nedschee
+  Sign: teBeekLin

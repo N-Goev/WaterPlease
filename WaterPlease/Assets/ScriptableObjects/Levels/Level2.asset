@@ -13,14 +13,240 @@ MonoBehaviour:
   m_Name: Level2
   m_EditorClassIdentifier: Assembly-CSharp::LevelScriptableObject
   NPCList:
-  - {fileID: 11400000, guid: 51bf972427be39b45b930968f8e2fb17, type: 2}
   - {fileID: 11400000, guid: 3159b1b188fd2e248a97192b303e0b6e, type: 2}
-  CenterNedscheeWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  NorthNedscheeWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  SouthNedscheeWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  EastNedscheeWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  WestNedscheeWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  CenterLogehenWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  SouthLogehenWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  EastLogehenWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
+  - {fileID: 11400000, guid: f35d1bd04e06d414dac233f12326a708, type: 2}
+  - {fileID: 11400000, guid: 95e78e990c0b1fc4893b875af1a2faf8, type: 2}
+  - {fileID: 11400000, guid: b72f1d9ea8156704a8764ef9c21a16f2, type: 2}
   DayOfTheWeek: 4
+  CenterNedscheeWeeklyWeather:
+  - weatherType: 1
+    maxTemperature: 13
+    minTemperature: 4
+    percent: 14
+  - weatherType: 2
+    maxTemperature: 11
+    minTemperature: 3
+    percent: 65
+  - weatherType: 1
+    maxTemperature: 12
+    minTemperature: 5
+    percent: 10
+  - weatherType: 2
+    maxTemperature: 9
+    minTemperature: 2
+    percent: 82
+  - weatherType: 1
+    maxTemperature: 10
+    minTemperature: 5
+    percent: 20
+  - weatherType: 0
+    maxTemperature: 14
+    minTemperature: 8
+    percent: 5
+  - weatherType: 0
+    maxTemperature: 17
+    minTemperature: 10
+    percent: 3
+  NorthNedscheeWeeklyWeather:
+  - weatherType: 1
+    maxTemperature: 12
+    minTemperature: 3
+    percent: 17
+  - weatherType: 2
+    maxTemperature: 10
+    minTemperature: 2
+    percent: 71
+  - weatherType: 2
+    maxTemperature: 11
+    minTemperature: 4
+    percent: 43
+  - weatherType: 2
+    maxTemperature: 8
+    minTemperature: 1
+    percent: 85
+  - weatherType: 1
+    maxTemperature: 10
+    minTemperature: 5
+    percent: 31
+  - weatherType: 1
+    maxTemperature: 13
+    minTemperature: 7
+    percent: 8
+  - weatherType: 0
+    maxTemperature: 16
+    minTemperature: 9
+    percent: 4
+  SouthNedscheeWeeklyWeather:
+  - weatherType: 0
+    maxTemperature: 16
+    minTemperature: 8
+    percent: 4
+  - weatherType: 1
+    maxTemperature: 14
+    minTemperature: 6
+    percent: 16
+  - weatherType: 2
+    maxTemperature: 12
+    minTemperature: 5
+    percent: 51
+  - weatherType: 2
+    maxTemperature: 11
+    minTemperature: 4
+    percent: 68
+  - weatherType: 1
+    maxTemperature: 13
+    minTemperature: 7
+    percent: 20
+  - weatherType: 0
+    maxTemperature: 19
+    minTemperature: 9
+    percent: 3
+  - weatherType: 0
+    maxTemperature: 20
+    minTemperature: 12
+    percent: 1
+  EastNedscheeWeeklyWeather:
+  - weatherType: 0
+    maxTemperature: 14
+    minTemperature: 5
+    percent: 6
+  - weatherType: 1
+    maxTemperature: 12
+    minTemperature: 4
+    percent: 19
+  - weatherType: 1
+    maxTemperature: 13
+    minTemperature: 5
+    percent: 12
+  - weatherType: 2
+    maxTemperature: 10
+    minTemperature: 3
+    percent: 73
+  - weatherType: 2
+    maxTemperature: 12
+    minTemperature: 6
+    percent: 45
+  - weatherType: 0
+    maxTemperature: 15
+    minTemperature: 8
+    percent: 5
+  - weatherType: 0
+    maxTemperature: 18
+    minTemperature: 10
+    percent: 2
+  WestNedscheeWeeklyWeather:
+  - weatherType: 1
+    maxTemperature: 13
+    minTemperature: 5
+    percent: 13
+  - weatherType: 2
+    maxTemperature: 11
+    minTemperature: 4
+    percent: 63
+  - weatherType: 0
+    maxTemperature: 14
+    minTemperature: 5
+    percent: 7
+  - weatherType: 2
+    maxTemperature: 9
+    minTemperature: 3
+    percent: 80
+  - weatherType: 1
+    maxTemperature: 12
+    minTemperature: 6
+    percent: 27
+  - weatherType: 1
+    maxTemperature: 14
+    minTemperature: 8
+    percent: 10
+  - weatherType: 0
+    maxTemperature: 17
+    minTemperature: 10
+    percent: 3
+  CenterLogehenWeeklyWeather:
+  - weatherType: 1
+    maxTemperature: 14
+    minTemperature: 5
+    percent: 11
+  - weatherType: 2
+    maxTemperature: 12
+    minTemperature: 4
+    percent: 61
+  - weatherType: 1
+    maxTemperature: 13
+    minTemperature: 5
+    percent: 9
+  - weatherType: 2
+    maxTemperature: 10
+    minTemperature: 4
+    percent: 79
+  - weatherType: 2
+    maxTemperature: 11
+    minTemperature: 7
+    percent: 43
+  - weatherType: 1
+    maxTemperature: 14
+    minTemperature: 9
+    percent: 7
+  - weatherType: 0
+    maxTemperature: 17
+    minTemperature: 10
+    percent: 3
+  SouthLogehenWeeklyWeather:
+  - weatherType: 1
+    maxTemperature: 15
+    minTemperature: 7
+    percent: 12
+  - weatherType: 2
+    maxTemperature: 13
+    minTemperature: 6
+    percent: 47
+  - weatherType: 0
+    maxTemperature: 16
+    minTemperature: 7
+    percent: 4
+  - weatherType: 1
+    maxTemperature: 12
+    minTemperature: 5
+    percent: 22
+  - weatherType: 2
+    maxTemperature: 11
+    minTemperature: 6
+    percent: 59
+  - weatherType: 1
+    maxTemperature: 15
+    minTemperature: 8
+    percent: 9
+  - weatherType: 0
+    maxTemperature: 19
+    minTemperature: 12
+    percent: 2
+  EastLogehenWeeklyWeather:
+  - weatherType: 0
+    maxTemperature: 15
+    minTemperature: 6
+    percent: 5
+  - weatherType: 1
+    maxTemperature: 13
+    minTemperature: 5
+    percent: 19
+  - weatherType: 2
+    maxTemperature: 11
+    minTemperature: 4
+    percent: 54
+  - weatherType: 2
+    maxTemperature: 9
+    minTemperature: 3
+    percent: 76
+  - weatherType: 1
+    maxTemperature: 12
+    minTemperature: 7
+    percent: 24
+  - weatherType: 0
+    maxTemperature: 16
+    minTemperature: 9
+    percent: 6
+  - weatherType: 0
+    maxTemperature: 18
+    minTemperature: 11
+    percent: 2

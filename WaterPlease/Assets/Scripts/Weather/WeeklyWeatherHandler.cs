@@ -122,7 +122,7 @@ public class WeeklyWeatherHandler : MonoBehaviour
             weatherMapIconsHandler.UpdateWeatherText(DailyWeatherTypes[i], currentWeatherInfo.weatherType);
 
             DailyTemperatures[i].text = currentWeatherInfo.maxTemperature.ToString() + "° / " + currentWeatherInfo.minTemperature.ToString() + "°";
-            DailyPercentages[i].text = currentWeatherInfo.percent.ToString();
+            DailyPercentages[i].text = currentWeatherInfo.percent.ToString() + "%";
         }
     }
 }

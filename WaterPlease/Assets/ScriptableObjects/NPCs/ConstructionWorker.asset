@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da6dfa1a9138964bbe29871944cc5d9, type: 3}
+  m_Name: ConstructionWorker
+  m_EditorClassIdentifier: Assembly-CSharp::NPCScriptableObject
+  NPCSprite: {fileID: 21300000, guid: 0746f5e05d852d240aa5209c689c477c, type: 3}
+  Dialogue:
+  - Water is used every step of the way.
+  - Highway constructions cannot continue without water.
+  - We aren't getting water to take more showers, I know women like us dirty.
+  Name: Milo
+  Surname: Juan
+  Sex: 0
+  Nationality: The Netherlands
+  DateOfBirth: 29 FEB/FEB 2044
+  DateOfIssue: 28 NOV/NOV 2061
+  DateOfExpiry: 28 NOV/NOV 2071
+  WaterRequest: 300 000L
+  ReasonsForWaterRequest:
+  - 'Mix concrete for road construction  '
+  Residency: Nedschee
+  TopUsesOfWater:
+  - key: Preperation Construction Road
+    value: 9000
+  - key: Cleaning
+    value: 200
+  - key: Dust Control
+    value: 500
+  DateAndPlace: 12 FEB/FEB 2068 Nedschee
+  Sign: Milo

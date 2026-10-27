@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da6dfa1a9138964bbe29871944cc5d9, type: 3}
+  m_Name: Investor
+  m_EditorClassIdentifier: Assembly-CSharp::NPCScriptableObject
+  NPCSprite: {fileID: 21300000, guid: 385a94dbe1ad7b449ba19fdc7fff38d1, type: 3}
+  Dialogue:
+  - This will be the future
+  - "We can\u2019t continue without any water"
+  - I have been careful with my water the past few months! I deserve this.
+  Name: Katy
+  Surname: Fighter
+  Sex: 1
+  Nationality: The Netherlands
+  DateOfBirth: 9 JAN/JAN 2039
+  DateOfIssue: 30 MEI/MAY 2064
+  DateOfExpiry: 30 MEI/MAY 2074
+  WaterRequest: 30 000L
+  ReasonsForWaterRequest:
+  - Cooling AI data center for critical computing services
+  Residency: Center Logehem
+  TopUsesOfWater:
+  - key: Drinking
+    value: 5
+  - key: Cleaning
+    value: 15
+  - key: Showering
+    value: 100
+  DateAndPlace: 20 FEB/FEB 2068 Nedschee
+  Sign: KatyFighter

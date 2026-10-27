@@ -10,24 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9da6dfa1a9138964bbe29871944cc5d9, type: 3}
-  m_Name: NPC2
+  m_Name: Farmer
   m_EditorClassIdentifier: Assembly-CSharp::NPCScriptableObject
   NPCSprite: {fileID: 21300000, guid: 18e81b3091254dc4ead71451555e51c3, type: 3}
   Dialogue:
-  - I'm Person2
-  Name: Ivanka
-  Surname: Ivanova
+  - Aye man I need water for me crops
+  - It is never raining over here, I must give them water manually
+  Name: Willem
+  Surname: van den Berg
   Sex: 1
-  Nationality: Lithuanian
-  DateOfBirth: 03.07.2043
-  DateOfIssue: 28.07.2063
-  DateOfExpiry: 28.07.2073
-  WaterRequest: 100L
+  Nationality: The Netherlands
+  DateOfBirth: 4 SEP/SEP 2032
+  DateOfIssue: 9 JUN/JUN 2064
+  DateOfExpiry: 9 JUN/JUN 2069
+  WaterRequest: 20 000L
   ReasonsForWaterRequest:
-  - I'm thirsty
+  - Sustain crops
+  - Prevent crops from drying out
   Residency: Logehen
   TopUsesOfWater:
-  - key: Drinking water
-    value: 100
-  DateAndPlace: 12.02.2068 Nedschee
-  Sign: IV
+  - key: Crops
+    value: 160
+  - key: Shower
+    value: 5000
+  - key: Cleaning
+    value: 40
+  DateAndPlace: 12 FEB/FEB 2068 Nedschee
+  Sign: WVdB

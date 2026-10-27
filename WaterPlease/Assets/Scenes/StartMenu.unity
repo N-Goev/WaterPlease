@@ -1284,7 +1284,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: THe Last Drop
+  m_text: Last Drop
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 945f38cf840f91442bd02c53b9993e8f, type: 2}
   m_sharedMaterial: {fileID: -6622930987705456452, guid: 945f38cf840f91442bd02c53b9993e8f, type: 2}

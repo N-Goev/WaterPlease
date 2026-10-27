@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da6dfa1a9138964bbe29871944cc5d9, type: 3}
+  m_Name: Citizen2
+  m_EditorClassIdentifier: Assembly-CSharp::NPCScriptableObject
+  NPCSprite: {fileID: 21300000, guid: 385a94dbe1ad7b449ba19fdc7fff38d1, type: 3}
+  Dialogue:
+  - I am quite new to all this new rules
+  - Do I just hand in my request here
+  - I really love my garden, I would feel honored if you spare me some water
+  Name: Stephan
+  Surname: de Staart
+  Sex: 0
+  Nationality: The Netherlands
+  DateOfBirth: 25 DEC/DEC 1985
+  DateOfIssue: 17 DEC/DEC 2065
+  DateOfExpiry: 17 DEC/DEC 2070
+  WaterRequest: 200L
+  ReasonsForWaterRequest:
+  - Keep lawn green and healthy
+  Residency: North Nedschee
+  TopUsesOfWater:
+  - key: Garden
+    value: 190
+  - key: Cleaning
+    value: 20
+  - key: Showering
+    value: 100
+  DateAndPlace: 20 FEB/FEB 2068 Nedschee
+  Sign: StaartStephan
