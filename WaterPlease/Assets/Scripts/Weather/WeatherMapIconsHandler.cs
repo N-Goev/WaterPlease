@@ -37,7 +37,7 @@ public class WeatherMapIconsHandler : MonoBehaviour
         LevelScriptableObject levelInfo = levelInfoEvent.LevelScriptableObject;
 
         //List of the weekly weather for each region
-        List<List<WeatherType>> weatherTypes = new();
+        List<List<DailyWeatherInfo>> weatherTypes = new();
         weatherTypes.Add(levelInfo.CenterNedscheeWeeklyWeather);
         weatherTypes.Add(levelInfo.NorthNedscheeWeeklyWeather);
         weatherTypes.Add(levelInfo.SouthNedscheeWeeklyWeather);
@@ -55,7 +55,7 @@ public class WeatherMapIconsHandler : MonoBehaviour
                 break;
             }
 
-            WeatherType currentWeatherType = weatherTypes[i][(int)levelInfo.DayOfTheWeek];
+            WeatherType currentWeatherType = weatherTypes[i][(int)levelInfo.DayOfTheWeek].weatherType;
 
             UpdateWeatherImage(weatherIcons[i], currentWeatherType);
         }

@@ -113,29 +113,16 @@ public class WeeklyWeatherHandler : MonoBehaviour
         OpenWeeklyWeather();
     }
 
-    private void UpdateWeeklyWeatherData(List<WeatherType> weatherForTheWeek) {
+    private void UpdateWeeklyWeatherData(List<DailyWeatherInfo> weatherForTheWeek) {
         for (int i = 0; i < 7; i++)
         {
-            weatherMapIconsHandler.UpdateWeatherImage(DailyWeatherIcons[i], weatherForTheWeek[i]);
-            weatherMapIconsHandler.UpdateWeatherText(DailyWeatherTypes[i], weatherForTheWeek[i]);
+            DailyWeatherInfo currentWeatherInfo = weatherForTheWeek[i];
 
-            DailyTemperatures[i].text = GetRandomTemperature();
-            DailyPercentages[i].text = GetRandomPercent();
+            weatherMapIconsHandler.UpdateWeatherImage(DailyWeatherIcons[i], currentWeatherInfo.weatherType);
+            weatherMapIconsHandler.UpdateWeatherText(DailyWeatherTypes[i], currentWeatherInfo.weatherType);
+
+            DailyTemperatures[i].text = currentWeatherInfo.maxTemperature.ToString() + "° / " + currentWeatherInfo.minTemperature.ToString() + "°";
+            DailyPercentages[i].text = currentWeatherInfo.percent.ToString();
         }
-    }
-
-    private string GetRandomTemperature()
-    {
-        int randTempMax = (int)Random.Range(5f, 19f);
-        int randTempMin = (int)Random.Range(randTempMax - 8f, randTempMax - 3f);
-
-        return randTempMax.ToString() + "° / " + randTempMin.ToString() + "°";
-    }
-
-    private string GetRandomPercent()
-    {
-        int randPercent = (int)Random.Range(2f, 31f);
-
-        return randPercent.ToString() + "%";
     }
 }

@@ -15,12 +15,236 @@ MonoBehaviour:
   NPCList:
   - {fileID: 11400000, guid: 001f092f024157a4aa6a69ec85714de5, type: 2}
   - {fileID: 11400000, guid: 9ace047c1276cea4f810d7cb1ded368d, type: 2}
-  CenterNedscheeWeeklyWeather: 00000000010000000200000000000000010000000200000000000000i
-  NorthNedscheeWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  SouthNedscheeWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  EastNedscheeWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  WestNedscheeWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  CenterLogehenWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  SouthLogehenWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
-  EastLogehenWeeklyWeather: 00000000000000000000000000000000000000000000000000000000i
   DayOfTheWeek: 2
+  CenterNedscheeWeeklyWeather:
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 1
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 2
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 1
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 2
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  NorthNedscheeWeeklyWeather:
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  SouthNedscheeWeeklyWeather:
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  EastNedscheeWeeklyWeather:
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  WestNedscheeWeeklyWeather:
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  CenterLogehenWeeklyWeather:
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  SouthLogehenWeeklyWeather:
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  EastLogehenWeeklyWeather:
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
+  - weatherType: 0
+    maxTemperature: 0
+    minTemperature: 0
+    percent: 0
