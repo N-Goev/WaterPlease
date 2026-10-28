@@ -1,31 +1,9 @@
 using UnityEditor;
-using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 [CustomPropertyDrawer(typeof(DailyWeatherInfo))]
 public class DailyWeatherInfoPropertyDrawer : PropertyDrawer
 {
-    //public override VisualElement CreatePropertyGUI(SerializedProperty property)
-    //{
-    //    // Create property container element.
-    //    var container = new VisualElement();
-
-    //    // Create property fields.
-    //    var weatherTypeField = new PropertyField(property.FindPropertyRelative("weatherType"));
-    //    var maxTemperatureField = new PropertyField(property.FindPropertyRelative("maxTemperature"));
-    //    var minTemperatureField = new PropertyField(property.FindPropertyRelative("minTemperature"));
-    //    var percentField = new PropertyField(property.FindPropertyRelative("percent"));
-
-    //    // Add fields to the container.
-    //    container.Add(weatherTypeField);
-    //    container.Add(maxTemperatureField);
-    //    container.Add(minTemperatureField);
-    //    container.Add(percentField);
-
-    //    return container;
-    //}
-
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
         // Using BeginProperty / EndProperty on the parent property means that
