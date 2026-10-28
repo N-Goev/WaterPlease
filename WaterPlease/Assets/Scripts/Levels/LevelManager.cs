@@ -42,6 +42,8 @@ public class LevelManager : MonoBehaviour
     private void OnLevelStart(FadeAnimationCompleteEvent fadeAnimationCompleteEvent)
     {
         StartCoroutine(SpawnNPCCoroutine(0));
+
+        Cursor.visible = true;
     }
 
     // Spawning NPCs

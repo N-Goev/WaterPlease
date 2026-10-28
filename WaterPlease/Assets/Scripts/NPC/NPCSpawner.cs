@@ -5,7 +5,8 @@ public class NPCSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject NPCPrefab;
 
-    private Vector3 NPCSpawnPos = new Vector3(-0.6f, 0.4f, 0f);
+    [SerializeField] private Vector3 NPCSpawnPos = new Vector3(-0.6f, 0.4f, 0f);
+    [SerializeField] private float NPCFinalZPosition;
 
     public void SpawnNextNPC(NPCScriptableObject npcScriptableObject)
     {
@@ -15,6 +16,6 @@ public class NPCSpawner : MonoBehaviour
     private void SpawnNPC(NPCScriptableObject npcScriptableObject)
     {
         GameObject currentNPC = Instantiate(NPCPrefab, NPCSpawnPos, Quaternion.identity);
-        currentNPC.GetComponent<NPCHandler>()?.InitNPC(npcScriptableObject);
+        currentNPC.GetComponent<NPCHandler>()?.InitNPC(npcScriptableObject, NPCFinalZPosition);
     }
 }

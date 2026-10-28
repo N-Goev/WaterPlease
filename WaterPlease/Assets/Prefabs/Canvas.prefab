@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318f4df9e4759314791486f3ab396ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueHandler
-  letterDelay: 0.1
+  letterDelay: 0.05
 --- !u!1 &2481858258752960290
 GameObject:
   m_ObjectHideFlags: 0

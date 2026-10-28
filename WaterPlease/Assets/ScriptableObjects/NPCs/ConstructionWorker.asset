@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da6dfa1a9138964bbe29871944cc5d9, type: 3}
   m_Name: ConstructionWorker
   m_EditorClassIdentifier: Assembly-CSharp::NPCScriptableObject
-  NPCSprite: {fileID: 21300000, guid: 0746f5e05d852d240aa5209c689c477c, type: 3}
+  NPCSprite: {fileID: 21300000, guid: 950264e239d00ab449e6ec58c640a00a, type: 3}
   Dialogue:
   - Water is used every step of the way.
   - Highway constructions cannot continue without water.

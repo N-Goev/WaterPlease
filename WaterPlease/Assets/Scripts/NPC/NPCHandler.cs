@@ -19,15 +19,22 @@ public class NPCHandler : MonoBehaviour, IPointerDownHandler
         EventBus.Remove<DocumentStampedEvent>(OnDocumentStamped);
     }
 
-    private void Start()
-    {
-        StartCoroutine(MoveNPCCoroutine());
-    }
-
     public void InitNPC(NPCScriptableObject npcScriptableObject)
     {
         this.npcScriptableObject = npcScriptableObject;
         GetComponentInChildren<SpriteRenderer>().sprite = npcScriptableObject.NPCSprite;
+
+        StartCoroutine(MoveNPCCoroutine());
+    }
+
+    public void InitNPC(NPCScriptableObject npcScriptableObject, float finalZPosition)
+    {
+        this.npcScriptableObject = npcScriptableObject;
+        GetComponentInChildren<SpriteRenderer>().sprite = npcScriptableObject.NPCSprite;
+
+        finalZ = finalZPosition;
+
+        StartCoroutine(MoveNPCCoroutine());
     }
 
     private void OnDocumentStamped(DocumentStampedEvent documentStampedEvent)

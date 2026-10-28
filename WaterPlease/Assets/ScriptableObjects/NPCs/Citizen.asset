@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da6dfa1a9138964bbe29871944cc5d9, type: 3}
   m_Name: Citizen
   m_EditorClassIdentifier: Assembly-CSharp::NPCScriptableObject
-  NPCSprite: {fileID: 21300000, guid: 4b2d225175a3d014d8affa85fbeca670, type: 3}
+  NPCSprite: {fileID: 21300000, guid: e110c7ea5704fc04da5771ddd684147c, type: 3}
   Dialogue:
   - Yo man, apparently you hafta go here to get water nowadays.
   - Just water man why you inspecting?
