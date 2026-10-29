@@ -27,7 +27,7 @@ MonoBehaviour:
   ReasonsForWaterRequest:
   - Sustain crops
   - Prevent crops from drying out
-  Residency: Logehen
+  Residency: South Logehen
   TopUsesOfWater:
   - key: Crops
     value: 160

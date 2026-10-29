@@ -792,7 +792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d03c7ca2cc6ed745afbf50914c519da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inspectable
-  distanceFromCamera: 0.3
+  distanceFromCamera: 0.25
 --- !u!114 &4568749648555238146
 MonoBehaviour:
   m_ObjectHideFlags: 0
