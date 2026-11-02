@@ -65,9 +65,8 @@ public class LevelManager : MonoBehaviour
         {
             EventBus.Invoke(new LevelCompleteEvent(SceneManager.GetActiveScene().buildIndex));
 
+            Cursor.visible = true;
             TryLoadNextScene();
-
-            print("Level Complete");
         }
     }
 

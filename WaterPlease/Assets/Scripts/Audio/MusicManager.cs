@@ -13,9 +13,5 @@ public class MusicManager : MonoBehaviour
 
     private void Start()
     {
-        if(audioSource != null)
-        {
-            audioSource.PlayOneShot(backgroundMusic);
-        }
     }
 }
