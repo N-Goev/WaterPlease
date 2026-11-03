@@ -73,7 +73,6 @@ public class LevelManager : MonoBehaviour
     private void OnDocumentStamped(DocumentStampedEvent documentStampedEvent)
     {
         StartCoroutine(SpawnNPCCoroutine(1));
-        print(documentStampedEvent.DocumentState);
     }
 
     private bool CanSpawnNPC()

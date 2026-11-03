@@ -3,6 +3,7 @@ using TMPro;
 using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using System;
 
 public class DialogueHandler : MonoBehaviour, IPointerDownHandler
 {
@@ -23,6 +24,8 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
         EventBus.Add<NPCClickedEvent>(OnNPCClicked);
         EventBus.Add<ZoomingInEvent>(OnZoomedIn);
         EventBus.Add<ZoomingOutEvent>(OnZoomedOut);
+        EventBus.Add<ItemPickedUpEvent>(OnItemPickedUp);
+        EventBus.Add<ItemDroppedEvent>(OnItemDropped);
     }
 
     private void OnDisable()
@@ -32,17 +35,19 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
         EventBus.Remove<NPCClickedEvent>(OnNPCClicked);
         EventBus.Remove<ZoomingInEvent>(OnZoomedIn);
         EventBus.Remove<ZoomingOutEvent>(OnZoomedOut);
+        EventBus.Remove<ItemPickedUpEvent>(OnItemPickedUp);
+        EventBus.Remove<ItemDroppedEvent>(OnItemDropped);
     }
 
-    void Awake()
+    private void Awake()
     {
         textComponent = GetComponentInChildren<TextMeshProUGUI>();
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
-    void Start()
+    private void Start()
     {
-        Hide();
+        HideDialogueBox();
     }
 
     private void OnNPCReachedTable(NPCReachedTableEvent npcReachedTableEvent)
@@ -57,10 +62,10 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
         dialogue = newDialogue;
         StartCoroutine(TypeLine());
 
-        Show();
+        ShowDialogueBox();
     }
 
-    IEnumerator TypeLine()
+    private IEnumerator TypeLine()
     {
         foreach (char c in dialogue[index].ToCharArray())
         {
@@ -69,32 +74,9 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
         }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    private void GoToNextLine()
     {
-        OnInteract();
-    }
-
-    private void OnNPCClicked(NPCClickedEvent npcClickedEvent)
-    {
-        OnInteract();
-    }
-
-    private void OnInteract()
-    {
-        if (textComponent.text == dialogue[index])
-        {
-            NextLine();
-        }
-        else
-        {
-            StopAllCoroutines();
-            textComponent.text = dialogue[index];
-        }
-    }
-
-    private void NextLine()
-    {
-        if(index < dialogue.Length - 1)
+        if (index < dialogue.Length - 1)
         {
             index++;
             textComponent.text = string.Empty;
@@ -106,7 +88,29 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
         }
     }
 
-    private void Show()
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        OnInteract();
+    }
+
+    private void OnInteract()
+    {
+        if (!textComponent) { return; }
+        if (dialogue == null) { return; }
+        if (dialogue.Length <=0 ) { return; }
+
+        if (textComponent.text == dialogue[index])
+        {
+            GoToNextLine();
+        }
+        else
+        {
+            StopAllCoroutines();
+            textComponent.text = dialogue[index];
+        }
+    }
+
+    private void ShowDialogueBox()
     {
         if (CanShowDialogue)
         {
@@ -116,26 +120,44 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
         } 
     }
 
-    private void OnDocumentStamped(DocumentStampedEvent documentStampedEvent)
-    {
-        Hide();
-    }
-
-    private void Hide()
+    private void HideDialogueBox()
     {
         canvasGroup.alpha = 0f;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
     }
 
+    private void OnNPCClicked(NPCClickedEvent npcClickedEvent)
+    {
+        OnInteract();
+    }
+
+    private void OnDocumentStamped(DocumentStampedEvent documentStampedEvent)
+    {
+        StopAllCoroutines();
+        HideDialogueBox();
+    }
+
     private void OnZoomedIn(ZoomingInEvent zoomingInEvent) {
         CanShowDialogue = false;
-        Hide();
+        HideDialogueBox();
     }
 
     private void OnZoomedOut(ZoomingOutEvent zoomingOutEvent)
     {
         CanShowDialogue = true;
-        Show();
+        ShowDialogueBox();
+    }
+
+    private void OnItemDropped(ItemDroppedEvent @event)
+    {
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
+    }
+
+    private void OnItemPickedUp(ItemPickedUpEvent @event)
+    {
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
     }
 }

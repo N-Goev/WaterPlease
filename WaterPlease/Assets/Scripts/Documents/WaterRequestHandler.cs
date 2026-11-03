@@ -38,7 +38,7 @@ public class WaterRequestHandler : MonoBehaviour
 
         Grabbable currentGrabbable = other.gameObject.GetComponent<Grabbable>();
 
-        if (!currentGrabbable || currentGrabbable.grabState == Grabbable.GrabState.NotGrabbed)
+        if (!currentGrabbable)
         {
             return;
         }
