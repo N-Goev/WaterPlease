@@ -42,9 +42,18 @@ public class Grabbable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
     {
         if(!isGrabbed) { return; }
 
-        MoveToMousePosition();
+        MoveToPointerPosition();
 
         EventBus.Invoke(new ItemDraggedEvent(this.gameObject));
+    }
+
+    private void MoveToPointerPosition()
+    {
+        Vector2 pointerPos = Pointer.current.position.ReadValue();
+        Vector3 position = new Vector3(pointerPos.x, pointerPos.y, Camera.main.WorldToScreenPoint(transform.position).z);
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
+
+        transform.position = new Vector3(worldPosition.x, worldPosition.y, transform.position.z);
     }
 
     private void EnablePhysics()
@@ -57,14 +66,5 @@ public class Grabbable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
     {
         rb.useGravity = false;
         rb.isKinematic = true;
-    }
-
-    private void MoveToMousePosition()
-    {
-        Vector2 mousePos = Mouse.current.position.ReadValue();
-        Vector3 position = new Vector3(mousePos.x, mousePos.y, Camera.main.WorldToScreenPoint(transform.position).z);
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
-
-        transform.position = new Vector3(worldPosition.x, worldPosition.y, transform.position.z);
     }
 }
