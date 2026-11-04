@@ -25,6 +25,7 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
         EventBus.Add<ZoomingInEvent>(OnZoomedIn);
         EventBus.Add<ZoomingOutEvent>(OnZoomedOut);
         EventBus.Add<ItemPickedUpEvent>(OnItemPickedUp);
+        EventBus.Add<ItemDraggedEvent>(OnItemDragged);
         EventBus.Add<ItemDroppedEvent>(OnItemDropped);
     }
 
@@ -36,6 +37,7 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
         EventBus.Remove<ZoomingInEvent>(OnZoomedIn);
         EventBus.Remove<ZoomingOutEvent>(OnZoomedOut);
         EventBus.Remove<ItemPickedUpEvent>(OnItemPickedUp);
+        EventBus.Remove<ItemDraggedEvent>(OnItemDragged);
         EventBus.Remove<ItemDroppedEvent>(OnItemDropped);
     }
 
@@ -149,15 +151,22 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
         ShowDialogueBox();
     }
 
-    private void OnItemDropped(ItemDroppedEvent @event)
+    private void OnItemPickedUp(ItemPickedUpEvent itemPickedUpEvent)
+    {
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
+    }
+
+    private void OnItemDragged(ItemDraggedEvent itemDraggedEvent)
+    {
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
+    }
+
+    private void OnItemDropped(ItemDroppedEvent itemDroppedEvent)
     {
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
     }
 
-    private void OnItemPickedUp(ItemPickedUpEvent @event)
-    {
-        canvasGroup.interactable = false;
-        canvasGroup.blocksRaycasts = false;
-    }
 }

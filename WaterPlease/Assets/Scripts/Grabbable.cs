@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -8,13 +9,38 @@ public class Grabbable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
 
     private bool isGrabbed = false;
 
+    private float heightOffset = 0.05f;
+
+    private void OnEnable()
+    {
+        EventBus.Add<DocumentStampedEvent>(OnDocumentStamped);
+    }
+
+    private void OnDisable()
+    {
+        EventBus.Remove<DocumentStampedEvent>(OnDocumentStamped);
+    }
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
 
+    //On dragged/moved
+    private void Update()
+    {
+        if (!isGrabbed) { return; }
+
+        MoveToPointerPosition();
+    }
+
     //On grabbed
     public void OnPointerDown(PointerEventData eventData)
+    {
+        PickUpGrabbable();
+    }
+
+    private void PickUpGrabbable()
     {
         isGrabbed = true;
 
@@ -22,11 +48,19 @@ public class Grabbable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
 
         Cursor.visible = false;
 
+        Vector3 newPos = new Vector3(transform.position.x, transform.position.y + heightOffset, transform.position.z);
+        transform.position = newPos;
+
         EventBus.Invoke(new ItemPickedUpEvent(this.gameObject));
     }
 
     //On dropped
     public void OnPointerUp(PointerEventData eventData)
+    {
+        DropGrabbable();
+    }
+
+    private void DropGrabbable()
     {
         isGrabbed = false;
 
@@ -37,12 +71,10 @@ public class Grabbable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
         EventBus.Invoke(new ItemDroppedEvent(this.gameObject));
     }
 
-    //On dragged
+    //Invoke moved event
     public void OnPointerMove(PointerEventData eventData)
     {
         if(!isGrabbed) { return; }
-
-        MoveToPointerPosition();
 
         EventBus.Invoke(new ItemDraggedEvent(this.gameObject));
     }
@@ -53,7 +85,7 @@ public class Grabbable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
         Vector3 position = new Vector3(pointerPos.x, pointerPos.y, Camera.main.WorldToScreenPoint(transform.position).z);
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
 
-        transform.position = new Vector3(worldPosition.x, worldPosition.y, transform.position.z);
+        transform.position = new Vector3(worldPosition.x, worldPosition.y + heightOffset, transform.position.z);
     }
 
     private void EnablePhysics()
@@ -66,5 +98,10 @@ public class Grabbable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
     {
         rb.useGravity = false;
         rb.isKinematic = true;
+    }
+
+    private void OnDocumentStamped(DocumentStampedEvent @event)
+    {
+        DropGrabbable();
     }
 }

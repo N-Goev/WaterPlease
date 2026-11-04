@@ -647,11 +647,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5997166341757581225, guid: a3d47d4d000a0e94ebc7546c4e4eff70, type: 3}
       propertyPath: NPCSpawnPos.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5997166341757581225, guid: a3d47d4d000a0e94ebc7546c4e4eff70, type: 3}
       propertyPath: NPCFinalZPosition
-      value: -4.5
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6968214153603584942, guid: a3d47d4d000a0e94ebc7546c4e4eff70, type: 3}
       propertyPath: m_LocalPosition.x

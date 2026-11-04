@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 49dc625512b31934cab8ee92c31d70ae
+guid: 620f4ea7edd9dda459bcad7d319c48ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -312738567421119420
-    second: Farmer_0
+      213: -162484466967000372
+    second: Farmer1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -74,12 +74,12 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -115,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Farmer_0
+      name: Farmer1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 490
-        height: 509
+        width: 2048
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 444bc4d0eede8abf0800000000000000
-      internalID: -312738567421119420
+      spriteID: ccac9e8fc3dbebdf0800000000000000
+      internalID: -162484466967000372
       vertices: []
       indices: 
       edges: []
