@@ -83,7 +83,7 @@ public class DocumentSpawner : MonoBehaviour
         {
             TextElements[0].text = npcScriptableObject.Surname;
             TextElements[1].text = npcScriptableObject.Name;
-            TextElements[2].text = npcScriptableObject.Sex.ToString();
+            TextElements[2].text = (npcScriptableObject.Sex.ToString() == "F" ? "V" : npcScriptableObject.Sex.ToString()) + "/" + npcScriptableObject.Sex.ToString();
             TextElements[3].text = npcScriptableObject.Nationality;
             TextElements[4].text = npcScriptableObject.DateOfBirth;
             TextElements[5].text = npcScriptableObject.DateOfIssue;

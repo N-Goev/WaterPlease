@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NPC", menuName = "ScriptableObjects/NPCScriptableObject")]
 public class NPCScriptableObject : ScriptableObject
 {
-    public enum SexOption { M, F, OTH}
+    public enum SexOption { M, F, X}
 
     public Sprite NPCSprite;
 
