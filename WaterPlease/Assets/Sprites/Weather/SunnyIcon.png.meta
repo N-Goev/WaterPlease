@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bf0237d9cdfe90f48bbae95ff459e88e
+guid: 1e5cab7390ae059479212a2a46a3389c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5596142080214384421
-    second: Rainy_0
+      213: -7167878149256146960
+    second: Sunny 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -74,12 +74,12 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -115,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rainy_0
+      name: Sunny 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 166
-        height: 95
+        width: 128
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bd0c43c7d628652b0800000000000000
-      internalID: -5596142080214384421
+      spriteID: 0ff8d40ecc4968c90800000000000000
+      internalID: -7167878149256146960
       vertices: []
       indices: 
       edges: []

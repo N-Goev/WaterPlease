@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bd012b4f9fa57c444bb4370c6bf8127a
+guid: 1a04665a26f024f45956df77597b309c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2439980043377583013
-    second: Cloudy_0
+      213: -1315248912203499407
+    second: WaterRequest_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -79,7 +79,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -115,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cloudy_0
+      name: WaterRequest_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 181
-        height: 95
+        width: 2048
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5a320900cec8cd120800000000000000
-      internalID: 2439980043377583013
+      spriteID: 17834e4351c4fbde0800000000000000
+      internalID: -1315248912203499407
       vertices: []
       indices: 
       edges: []
