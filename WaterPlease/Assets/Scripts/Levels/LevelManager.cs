@@ -49,25 +49,26 @@ public class LevelManager : MonoBehaviour
     // Spawning NPCs
     IEnumerator SpawnNPCCoroutine(float secondsToSpawn)
     {
-        yield return new WaitForSeconds(secondsToSpawn);
+        if (CanSpawnNPC())
+        {
+            yield return new WaitForSeconds(secondsToSpawn);
 
-        SpawnNPC();
+            SpawnNPC();
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.5f);
+            EventBus.Invoke(new LevelCompleteEvent());
+
+            Cursor.visible = true;
+        }
     }
 
     private void SpawnNPC()
     {
-        if (CanSpawnNPC()) {
-            NPCSpawner?.SpawnNextNPC(NPCList[0]);
+        NPCSpawner?.SpawnNextNPC(NPCList[0]);
 
-            NPCList.RemoveAt(0);
-        }
-        else
-        {
-            EventBus.Invoke(new LevelCompleteEvent(SceneManager.GetActiveScene().buildIndex));
-
-            Cursor.visible = true;
-            TryLoadNextScene();
-        }
+        NPCList.RemoveAt(0);
     }
 
     private void OnDocumentStamped(DocumentStampedEvent documentStampedEvent)
@@ -89,15 +90,5 @@ public class LevelManager : MonoBehaviour
     private void SpawnDocuments(NPCReachedTableEvent npcReachedTableEvent)
     {
         documentSpawner?.SpawnNextDocuments(npcReachedTableEvent);
-    }
-
-    private void TryLoadNextScene()
-    {
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-
-        if (SceneManager.sceneCountInBuildSettings > nextSceneIndex)
-        {
-            SceneManager.LoadScene(nextSceneIndex);
-        }
     }
 }
