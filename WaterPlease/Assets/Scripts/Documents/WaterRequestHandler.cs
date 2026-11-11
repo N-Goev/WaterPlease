@@ -3,13 +3,11 @@ using UnityEngine;
 
 public class WaterRequestHandler : MonoBehaviour
 {
-    public enum DocumentState { None, Approved, Denied}
-
     [SerializeField] Material outlineMaterial;
     MeshRenderer meshRenderer;
 
     private bool graded = false;
-    private DocumentState documentState = DocumentState.None;
+    private StampResult documentState = StampResult.None;
 
     private void OnEnable()
     {
@@ -53,10 +51,10 @@ public class WaterRequestHandler : MonoBehaviour
         switch (currentStamp.stampType)
         {
             case StampHandler.StampType.Approve:
-                documentState = DocumentState.Approved;
+                documentState = StampResult.Approved;
                 break;
             case StampHandler.StampType.Deny:
-                documentState = DocumentState.Denied;
+                documentState = StampResult.Denied;
                 break;
             default:
                 break;

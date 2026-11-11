@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536ea25b28277004cb7a1fdd3ee8ed38, type: 3}
+  m_Name: Level1Outcome1
+  m_EditorClassIdentifier: Assembly-CSharp::NewsOutcomeScriptableObject
+  CoverImage: {fileID: 21300000, guid: 8cded23da6e8493409d3f7895c227f9f, type: 3}
+  AuthorImage: {fileID: 21300000, guid: 21a913691ae1adb4a8675e1c62d7a081, type: 3}
+  authorName: Pete van Norman
+  publishDate: October 12, 2068
+  HeadlineText: Water Managment Done Right
+  detailsText: The Government's new system has proven to save a lot of water. Water reserved is 80% higher than last year according to official water reports.
+  comments:
+  - Icon: {fileID: 21300000, guid: ac0b1b6d9d356344e9c2fb64d43e11e1, type: 3}
+    Username: THAT#GUY
+    Comment: 'They sure game no one water and call that saving :angry:'
+  - Icon: {fileID: 21300000, guid: f3415cea0429e7547b19f11938b34378, type: 3}
+    Username: ANNONYMOUS_NO.240
+    Comment: Good work!
+  - Icon: {fileID: 21300000, guid: cd160bdabf6f5584a921d085a62a4dba, type: 3}
+    Username: S[AI]M_INTELLIGENCE
+    Comment: WE NEED MORE WATER! WE NEED MORE WATER! WE NEED MORE WATER! WE NEED MORE WATER! WE NEED MORE WATER! WE NEED MORE WATER! WE NEED MORE WATER! WE NEED MORE WATER! WE NEED MORE WATER! WE NEED MORE WATER!

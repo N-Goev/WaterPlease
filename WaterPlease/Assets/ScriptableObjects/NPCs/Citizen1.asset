@@ -27,7 +27,7 @@ MonoBehaviour:
   WaterRequest: 75L
   ReasonsForWaterRequest:
   - Shower
-  Residency: Nedschee
+  Residency: Center Nedschee
   TopUsesOfWater:
   - key: Shower
     value: 300

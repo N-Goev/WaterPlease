@@ -24,10 +24,10 @@ public class DocumentSpawner : MonoBehaviour
 
     private void SpawnDocuments(NPCScriptableObject npcScriptableObject)
     {
-        GameObject waterCredentialsInstance = Instantiate(WaterCredentialsPrefab, document1SpawnPos, Quaternion.identity);
+        //GameObject waterCredentialsInstance = Instantiate(WaterCredentialsPrefab, document1SpawnPos, Quaternion.identity);
         GameObject waterRequestInstance = Instantiate(waterRequestDocumentPrefab, document2SpawnPos, Quaternion.identity);
 
-        UpdateWaterCredentialsText(waterCredentialsInstance, npcScriptableObject);
+        //UpdateWaterCredentialsText(waterCredentialsInstance, npcScriptableObject);
         UpdateWaterRequestText(waterRequestInstance, npcScriptableObject);
     }
 

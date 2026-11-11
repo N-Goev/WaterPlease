@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da6dfa1a9138964bbe29871944cc5d9, type: 3}
   m_Name: HospitalWorker
   m_EditorClassIdentifier: Assembly-CSharp::NPCScriptableObject
-  NPCSprite: {fileID: 21300000, guid: 385a94dbe1ad7b449ba19fdc7fff38d1, type: 3}
+  NPCSprite: {fileID: 21300000, guid: 5281e0c4146a08943b1417301ef5046c, type: 3}
   Dialogue:
   - We usually bathe the patients twice a week
   - Do you have some spare water for us?
@@ -27,7 +27,7 @@ MonoBehaviour:
   ReasonsForWaterRequest:
   - Bathing patients
   - Ensure hygiene in medical treatment
-  Residency: North Logehem
+  Residency: Center Logehem
   TopUsesOfWater:
   - key: Bathing
     value: 4000

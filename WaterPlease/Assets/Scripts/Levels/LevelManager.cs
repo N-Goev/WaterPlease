@@ -12,12 +12,15 @@ public class LevelManager : MonoBehaviour
 
     private List<NPCScriptableObject> NPCList;
 
+    private List<StampResult> stampResults;
+
     private void Awake()
     {
         documentSpawner = GetComponent<DocumentSpawner>();
         NPCSpawner = GetComponent<NPCSpawner>();
 
         NPCList = new List<NPCScriptableObject>(Level.NPCList);
+        stampResults = new List<StampResult>();
     }
 
     private void OnEnable()
@@ -58,7 +61,7 @@ public class LevelManager : MonoBehaviour
         else
         {
             yield return new WaitForSeconds(0.5f);
-            EventBus.Invoke(new LevelCompleteEvent());
+            EventBus.Invoke(new LevelCompleteEvent(stampResults));
 
             Cursor.visible = true;
         }
@@ -73,6 +76,8 @@ public class LevelManager : MonoBehaviour
 
     private void OnDocumentStamped(DocumentStampedEvent documentStampedEvent)
     {
+        stampResults.Add(documentStampedEvent.stampResult);
+
         StartCoroutine(SpawnNPCCoroutine(1));
     }
 

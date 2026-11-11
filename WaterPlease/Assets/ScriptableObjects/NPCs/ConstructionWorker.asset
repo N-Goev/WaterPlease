@@ -27,7 +27,7 @@ MonoBehaviour:
   WaterRequest: 300 000L
   ReasonsForWaterRequest:
   - 'Mix concrete for road construction  '
-  Residency: Nedschee
+  Residency: Center Nedschee
   TopUsesOfWater:
   - key: Preperation Construction Road
     value: 9000
