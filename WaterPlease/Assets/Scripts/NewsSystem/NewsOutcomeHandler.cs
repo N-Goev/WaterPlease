@@ -30,27 +30,37 @@ public class NewsOutcomeHandler : MonoBehaviour
     {
         if (Level1PossibleOutcomes == null && Level1PossibleOutcomes.Count <= 0) { return null; }
         if (stampResults.Count != 3) { return null; }
-        if (Level1PossibleOutcomes.Count != 4) { return null; }
 
         StampResult result1 = stampResults[0];
         StampResult result2 = stampResults[1];
         StampResult result3 = stampResults[2];
 
-        if(result2 == StampResult.Denied)
+        //if(result2 == StampResult.Denied)
+        //{
+        //    return Level1PossibleOutcomes[1];
+        //}
+        //else if (result1 == StampResult.Denied && result3 == StampResult.Denied)
+        //{
+        //    return Level1PossibleOutcomes[0];
+        //}
+        //else if (result1 == StampResult.Approved && result3 == StampResult.Approved)
+        //{
+        //    return Level1PossibleOutcomes[3];
+        //}
+        //else
+        //{
+        //    return Level1PossibleOutcomes[2];
+        //}
+
+        //deny construction worker
+        if (result2 == StampResult.Denied)
         {
             return Level1PossibleOutcomes[1];
         }
-        else if (result1 == StampResult.Denied && result3 == StampResult.Denied)
-        {
-            return Level1PossibleOutcomes[0];
-        }
-        else if (result1 == StampResult.Approved && result3 == StampResult.Approved)
-        {
-            return Level1PossibleOutcomes[3];
-        }
+        //approve construction worker
         else
         {
-            return Level1PossibleOutcomes[2];
+            return Level1PossibleOutcomes[0];
         }
     }
 
@@ -58,17 +68,66 @@ public class NewsOutcomeHandler : MonoBehaviour
     {
         if (Level1PossibleOutcomes == null && Level1PossibleOutcomes.Count <= 0) { return null; }
         if (stampResults.Count != 4) { return null; }
-        if (Level2PossibleOutcomes.Count != 7) { return null; }
 
-        return null;
+        StampResult result1 = stampResults[0];
+        StampResult result2 = stampResults[1];
+        StampResult result3 = stampResults[2];
+        StampResult result4 = stampResults[3];
+
+        //decline riot police
+        if (result4 == StampResult.Denied)
+        {
+            return Level2PossibleOutcomes[3];
+        }
+        //decline firefighter
+        else if (result1 == StampResult.Denied)
+        {
+            return Level2PossibleOutcomes[1];
+        }
+        //approve everything
+        else if (result2 == StampResult.Approved && result3 == StampResult.Approved)
+        {
+            return Level2PossibleOutcomes[0];
+        }
+        //approve beer company
+        else if (result2 == StampResult.Approved)
+        {
+            return Level2PossibleOutcomes[2];
+        }
+        //perfect outcome
+        else
+        {
+            return Level2PossibleOutcomes[4];
+        }
     }
 
     private NewsOutcomeScriptableObject GetLevel3Outcome(List<StampResult> stampResults)
     {
         if (Level1PossibleOutcomes == null && Level1PossibleOutcomes.Count <= 0) { return null; }
         if (stampResults.Count != 5) { return null; }
-        if (Level3PossibleOutcomes.Count != 6) { return null; }
 
-        return null;
+        StampResult result1 = stampResults[0];
+        StampResult result2 = stampResults[1];
+        StampResult result3 = stampResults[2];
+        StampResult result4 = stampResults[3];
+        StampResult result5 = stampResults[4];
+
+        //perfect outcome
+        if (result1 == StampResult.Approved && result2 == StampResult.Approved && result5 == StampResult.Approved)
+        {
+            return Level3PossibleOutcomes[0];
+        }
+        else if (result5 == StampResult.Denied)
+        {
+            return Level3PossibleOutcomes[2];
+        }
+        else if (result1 == StampResult.Denied)
+        {
+            return Level3PossibleOutcomes[1];
+        }
+        else
+        {
+            return Level3PossibleOutcomes[0];
+        }
     }
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7fa727c4f812dba40a66350a5e4c4cb4
+guid: b299b79f6d1983a41a4c4fb2f3ae1d10
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1653878495824533174
-    second: newsBackground_0
+      213: -5802500860787571313
+    second: Newsletterimageonly3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: newsBackground_0
+      name: Newsletterimageonly3_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b65745bab1c3f610800000000000000
-      internalID: 1653878495824533174
+      spriteID: f85cbd7c530697fa0800000000000000
+      internalID: -5802500860787571313
       vertices: []
       indices: 
       edges: []

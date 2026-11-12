@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -18,6 +19,8 @@ public class NewsManager : MonoBehaviour
 
     private int currentPageIndex = 0;
 
+    private float commentDelay = 1f;
+    private float removeCommentDelay = 0.01f;
     private void OnEnable()
     {
         EventBus.Add<LevelCompleteEvent>(OnLevelComplete);
@@ -51,28 +54,52 @@ public class NewsManager : MonoBehaviour
         TextMeshProUGUI[] pageText = pages[0].GetComponentsInChildren<TextMeshProUGUI>();
 
         pageText[0].text = outcomeInfo.HeadlineText;
-        pageText[1].text = "Writer: " + outcomeInfo.authorName;
-        pageText[2].text = outcomeInfo.publishDate;
-        pageText[3].text = outcomeInfo.detailsText;
+        pageText[1].text = outcomeInfo.detailsText;
+        pageText[2].text = "Writer: " + outcomeInfo.authorName;
+        pageText[3].text = outcomeInfo.publishDate;
 
-        VerticalLayoutGroup Comments = pages[0].GetComponentInChildren<VerticalLayoutGroup>();
+        VerticalLayoutGroup commentsContainer = pages[0].GetComponentInChildren<VerticalLayoutGroup>();
 
-        foreach (NewsComment comment in outcomeInfo.comments)
+        StartCoroutine(ScrollComments(outcomeInfo.comments, commentsContainer));
+    }
+
+    private IEnumerator ScrollComments(List<NewsComment> comments, VerticalLayoutGroup commentsContainer)
+    {
+        List<GameObject> commentInstances = new List<GameObject>();
+        int currentCommentIndex = 0;
+
+        while (true)
         {
-            GameObject commentInstance = Instantiate(commentPrefab, Comments.transform);
-            TextMeshProUGUI[] commentText = commentInstance.GetComponentsInChildren<TextMeshProUGUI>();
+            if(currentCommentIndex >= 2)
+            {
+                Destroy(commentInstances[0]);
+                commentInstances.RemoveAt(0);
+            }
 
-            commentText[0].text = comment.Username;
-            commentText[1].text = comment.Comment;
-
-            int randHour = Random.Range(0, 23);
-            int randMinutes = Random.Range(0, 59);
-            commentText[2].text = (randHour < 10 ? "0" : "") + randHour + ":" + (randMinutes < 10 ? "0" : "") + randMinutes;
-
-            Image userIcon = commentInstance.GetComponentInChildren<Image>();
-
-            userIcon.sprite = comment.Icon;
+            commentInstances.Add(InstantiateComment(comments[currentCommentIndex%comments.Count], commentsContainer));
+            currentCommentIndex++;
+            yield return new WaitForSeconds(Random.Range(commentDelay, commentDelay + 1));
         }
+        
+    }
+
+    private GameObject InstantiateComment(NewsComment comment, VerticalLayoutGroup commentsContainer)
+    {
+        GameObject commentInstance = Instantiate(commentPrefab, commentsContainer.transform);
+        TextMeshProUGUI[] commentText = commentInstance.GetComponentsInChildren<TextMeshProUGUI>();
+
+        commentText[0].text = comment.Username;
+        commentText[1].text = comment.Comment;
+
+        int randHour = Random.Range(0, 23);
+        int randMinutes = Random.Range(0, 59);
+        commentText[2].text = (randHour < 10 ? "0" : "") + randHour + ":" + (randMinutes < 10 ? "0" : "") + randMinutes;
+
+        Image userIcon = commentInstance.GetComponentInChildren<Image>();
+
+        userIcon.sprite = comment.Icon;
+
+        return commentInstance;
     }
 
     private void OnLevelComplete(LevelCompleteEvent levelCompleteEvent)

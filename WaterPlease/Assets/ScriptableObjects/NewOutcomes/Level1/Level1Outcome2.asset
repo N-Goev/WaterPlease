@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536ea25b28277004cb7a1fdd3ee8ed38, type: 3}
   m_Name: Level1Outcome2
   m_EditorClassIdentifier: Assembly-CSharp::NewsOutcomeScriptableObject
-  CoverImage: {fileID: 21300000, guid: 2241e068e9f6b1f4fa2910b0e54db67e, type: 3}
+  CoverImage: {fileID: 21300000, guid: 89b756b317a91624d9a0082aa926d6a6, type: 3}
   AuthorImage: {fileID: 21300000, guid: 5f54449fd9bf1a441ad60778664c261b, type: 3}
   authorName: Pete van Norman
-  publishDate: October 12, 2068
+  publishDate: February 13, 2068
   HeadlineText: Highway A1 Construction delayed
   detailsText: The construction of highway A1 delayed due to lack of water creating heavy traffic everywhere. Workers could not get to work on time. Parent complain that their children are missing classes.
   comments:
@@ -26,5 +26,5 @@ MonoBehaviour:
     Username: ANNONYMOUS_NO.240
     Comment: Good work!
   - Icon: {fileID: 21300000, guid: cd160bdabf6f5584a921d085a62a4dba, type: 3}
-    Username: S[AI]M_INTELLIGENCE
-    Comment: WE NEED MORE WATER! WE NEED MORE WATER! WE NEED MORE WATER! WE NEED MORE WATER! WE NEED MORE WATER! WE NEED MORE WATER! WE NEED MORE WATER! WE NEED MORE WATER! WE NEED MORE WATER! WE NEED MORE WATER!
+    Username: S[AI]M__INTELLIGENCE
+    Comment: no way

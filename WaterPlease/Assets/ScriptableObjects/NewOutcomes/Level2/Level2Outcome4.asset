@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536ea25b28277004cb7a1fdd3ee8ed38, type: 3}
+  m_Name: Level2Outcome4
+  m_EditorClassIdentifier: Assembly-CSharp::NewsOutcomeScriptableObject
+  CoverImage: {fileID: 21300000, guid: 89b756b317a91624d9a0082aa926d6a6, type: 3}
+  AuthorImage: {fileID: 21300000, guid: 21a913691ae1adb4a8675e1c62d7a081, type: 3}
+  authorName: Pete van Norman
+  publishDate: February 15, 2068
+  HeadlineText: "Protest went out of hand. Police couldn\u2019t control the protest."
+  detailsText: What started as a peaceful protest about the water shortage quickly turned into chaos. Hundreds of angry residents gathered to demand better access to clean water, but tensions rose throughout the day.   Some protesters started throwing objects and blocking roads. Police officers struggled to control the growing crowd and restore order.   Several people were reportedly injured, and some protesters were arrested.
+  comments:
+  - Icon: {fileID: 21300000, guid: ac0b1b6d9d356344e9c2fb64d43e11e1, type: 3}
+    Username: THAT#GUY
+    Comment: 'They sure game no one water and call that saving :angry:'
+  - Icon: {fileID: 21300000, guid: f3415cea0429e7547b19f11938b34378, type: 3}
+    Username: ANNONYMOUS_NO.240
+    Comment: Good work!
