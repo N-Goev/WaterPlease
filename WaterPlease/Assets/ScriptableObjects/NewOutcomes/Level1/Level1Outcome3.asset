@@ -15,7 +15,7 @@ MonoBehaviour:
   CoverImage: {fileID: 21300000, guid: 89b756b317a91624d9a0082aa926d6a6, type: 3}
   AuthorImage: {fileID: 21300000, guid: 21a913691ae1adb4a8675e1c62d7a081, type: 3}
   authorName: Pete van Norman
-  publishDate: February 13, 2068
+  publishDate: June 28, 2068
   HeadlineText: There might not be enough water?
   detailsText: 
   comments:

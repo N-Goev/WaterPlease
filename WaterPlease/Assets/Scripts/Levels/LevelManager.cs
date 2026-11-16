@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -60,7 +59,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(2f);
             EventBus.Invoke(new LevelCompleteEvent(stampResults));
 
             Cursor.visible = true;
@@ -78,7 +77,7 @@ public class LevelManager : MonoBehaviour
     {
         stampResults.Add(documentStampedEvent.stampResult);
 
-        StartCoroutine(SpawnNPCCoroutine(1));
+        StartCoroutine(SpawnNPCCoroutine(2));
     }
 
     private bool CanSpawnNPC()

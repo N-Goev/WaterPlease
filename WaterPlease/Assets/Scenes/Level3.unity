@@ -309,6 +309,30 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1198846265908344377, guid: 36b3099b4652d294b8726a6b5e23b16e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.135
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198846265908344377, guid: 36b3099b4652d294b8726a6b5e23b16e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.727
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198846265908344377, guid: 36b3099b4652d294b8726a6b5e23b16e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99738634
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198846265908344377, guid: 36b3099b4652d294b8726a6b5e23b16e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.072253354
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198846265908344377, guid: 36b3099b4652d294b8726a6b5e23b16e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198846265908344377, guid: 36b3099b4652d294b8726a6b5e23b16e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198846265908344377, guid: 36b3099b4652d294b8726a6b5e23b16e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 25.147
       objectReference: {fileID: 0}
@@ -347,7 +371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4951786122157333189, guid: e93249228d9766c4aa0787526f794913, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.868
+      value: -8.703
       objectReference: {fileID: 0}
     - target: {fileID: 4951786122157333189, guid: e93249228d9766c4aa0787526f794913, type: 3}
       propertyPath: m_LocalRotation.w
@@ -480,7 +504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5831709881765884028, guid: c1108e4d7af5a924c8d2dcc6b4bf1df3, type: 3}
       propertyPath: m_text
-      value: LEVEL 3
+      value: Thursday, 12 July, 2068
       objectReference: {fileID: 0}
     - target: {fileID: 6916065719900645734, guid: c1108e4d7af5a924c8d2dcc6b4bf1df3, type: 3}
       propertyPath: m_Pivot.x

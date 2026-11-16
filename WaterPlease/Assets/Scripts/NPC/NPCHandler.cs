@@ -1,11 +1,13 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class NPCHandler : MonoBehaviour, IPointerDownHandler
 {
-    private float finalZ = -7f; 
-    private float moveSpeed = 4f;
+    private Vector3 deskPos; 
+    private Vector3 finalPos; 
+    private float moveSpeed = 1f;
 
     NPCScriptableObject npcScriptableObject;
 
@@ -24,35 +26,59 @@ public class NPCHandler : MonoBehaviour, IPointerDownHandler
         this.npcScriptableObject = npcScriptableObject;
         GetComponentInChildren<SpriteRenderer>().sprite = npcScriptableObject.NPCSprite;
 
-        StartCoroutine(MoveNPCCoroutine());
+        StartCoroutine(MoveNPCToDeskCoroutine());
     }
 
-    public void InitNPC(NPCScriptableObject npcScriptableObject, float finalZPosition)
+    public void InitNPC(NPCScriptableObject npcScriptableObject, Vector3 deskPosition, Vector3 finalPosition)
     {
         this.npcScriptableObject = npcScriptableObject;
         GetComponentInChildren<SpriteRenderer>().sprite = npcScriptableObject.NPCSprite;
 
-        finalZ = finalZPosition;
+        deskPos = deskPosition;
+        finalPos = finalPosition;
 
-        StartCoroutine(MoveNPCCoroutine());
+        StartCoroutine(MoveNPCToDeskCoroutine());
     }
 
     private void OnDocumentStamped(DocumentStampedEvent documentStampedEvent)
     {
-        Destroy(gameObject);
+        StartCoroutine(MoveNPCAwayCoroutine());
     }
 
-    IEnumerator MoveNPCCoroutine()
+    IEnumerator MoveNPCToDeskCoroutine()
     {
-        while (transform.position.z > finalZ)
+        float fraction = 0;
+
+        Vector3 startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+
+        while (fraction < 1)
         {
-            Vector3 currentPos = transform.position;
-            transform.position = new Vector3(currentPos.x, currentPos.y, currentPos.z - (moveSpeed * Time.deltaTime));
+            fraction += Time.deltaTime * moveSpeed;
+
+            transform.position = Vector3.Lerp(startPos, deskPos, fraction);
 
             yield return null;
         }
 
         EventBus.Invoke(new NPCReachedTableEvent(npcScriptableObject));
+    }
+
+    IEnumerator MoveNPCAwayCoroutine()
+    {
+        float fraction = 0;
+
+        Vector3 startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+
+        while (fraction < 1)
+        {
+            fraction += Time.deltaTime * moveSpeed;
+
+            transform.position = Vector3.Lerp(startPos, finalPos, fraction);
+
+            yield return null;
+        }
+
+        Destroy(gameObject);
     }
 
     public void OnPointerDown(PointerEventData eventData)

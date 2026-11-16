@@ -10,6 +10,7 @@ public class NewsManager : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField] private GameObject commentPrefab;
 
+    [SerializeField] private GameObject background;
     [SerializeField] private GameObject previousPageButton;
     [SerializeField] private GameObject nextPageButton;
     [SerializeField] private GameObject nextLevelButton;
@@ -46,7 +47,7 @@ public class NewsManager : MonoBehaviour
 
         if (outcomeInfo == null) { return; }
 
-        Image[] pageImages = pages[0].GetComponentsInChildren<Image>();
+        UnityEngine.UI.Image[] pageImages = pages[0].GetComponentsInChildren<UnityEngine.UI.Image>();
 
         pageImages[1].sprite  = outcomeInfo.CoverImage;
         pageImages[2].sprite  = outcomeInfo.AuthorImage;
@@ -95,7 +96,7 @@ public class NewsManager : MonoBehaviour
         int randMinutes = Random.Range(0, 59);
         commentText[2].text = (randHour < 10 ? "0" : "") + randHour + ":" + (randMinutes < 10 ? "0" : "") + randMinutes;
 
-        Image userIcon = commentInstance.GetComponentInChildren<Image>();
+        UnityEngine.UI.Image userIcon = commentInstance.GetComponentInChildren<UnityEngine.UI.Image>();
 
         userIcon.sprite = comment.Icon;
 
@@ -111,6 +112,7 @@ public class NewsManager : MonoBehaviour
 
     private void OpenNews()
     {
+        background.SetActive(true);
         DisableAllPages();
         EnableCurrentPage();
 
@@ -183,6 +185,7 @@ public class NewsManager : MonoBehaviour
         DisablePreviousButton();
         DisableNextButton();
         DisableNextLevelButton();
+        background.SetActive(false);
     }
 
     public void GoToNextPage()

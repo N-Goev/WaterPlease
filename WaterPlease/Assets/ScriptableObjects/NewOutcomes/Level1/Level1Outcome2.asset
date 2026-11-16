@@ -15,7 +15,7 @@ MonoBehaviour:
   CoverImage: {fileID: 21300000, guid: 89b756b317a91624d9a0082aa926d6a6, type: 3}
   AuthorImage: {fileID: 21300000, guid: 5f54449fd9bf1a441ad60778664c261b, type: 3}
   authorName: Pete van Norman
-  publishDate: February 13, 2068
+  publishDate: June 28, 2068
   HeadlineText: Highway A1 Construction delayed
   detailsText: The construction of highway A1 delayed due to lack of water creating heavy traffic everywhere. Workers could not get to work on time. Parent complain that their children are missing classes.
   comments:
