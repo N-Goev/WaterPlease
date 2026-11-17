@@ -36,5 +36,15 @@ public class StampHandler : MonoBehaviour
         if(gameObject.transform.position.y < startPosition.y) {
             gameObject.transform.position = startPosition;
         }
+
+        if (gameObject.transform.position.x < -1.2)
+        {
+            gameObject.transform.position = startPosition;
+        }
+
+        if (gameObject.transform.position.x > 1.15)
+        {
+            gameObject.transform.position = startPosition;
+        }
     }
 }

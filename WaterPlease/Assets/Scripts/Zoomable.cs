@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class Zoomable : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private float distanceFromObject = 0.2f;
+    [SerializeField] private Vector3 offset = Vector3.zero;
     private float zoomInTime = 0.4f;
     private float zoomOutTime = 0.3f;
 
@@ -49,11 +50,11 @@ public class Zoomable : MonoBehaviour, IPointerDownHandler
         ChangeState(ZoomState.Zooming);
 
         Vector3 startingPos = originalCameraPosition;
-        Vector3 finalPos = gameObject.transform.position - (gameObject.transform.forward * distanceFromObject);
+        Vector3 finalPos = (gameObject.transform.position + offset) - (gameObject.transform.forward * distanceFromObject);
 
         Quaternion startingRotation = originalCameraRotation;
         Vector3 lookDirection = gameObject.transform.position - finalPos;
-        Quaternion finalRotation = Quaternion.LookRotation(lookDirection);
+        Quaternion finalRotation = Quaternion.LookRotation(lookDirection + offset);
 
         float elapsedTime = 0;
 

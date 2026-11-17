@@ -34,7 +34,11 @@ public class LevelTransition : MonoBehaviour
 
         yield return new WaitForSeconds(transitionTime);
 
-        GetComponentInChildren<TextMeshProUGUI>().gameObject.SetActive(false);
+        TextMeshProUGUI[] texts = GetComponentsInChildren<TextMeshProUGUI>();
+        foreach(TextMeshProUGUI text in texts)
+        {
+            text.gameObject.SetActive(false);
+        }
 
         while (canvasGroup.alpha > 0) {
             canvasGroup.alpha -= Time.deltaTime;
