@@ -22,6 +22,7 @@ public class StampHandler : MonoBehaviour
 
     private void Update()
     {
+        CheckBoundariesVertical();
         CheckBoundariesHorizontal();
     }
 
@@ -49,7 +50,7 @@ public class StampHandler : MonoBehaviour
 
     private void CheckBoundariesVertical()
     {
-        if (gameObject.transform.position.y < startPosition.y)
+        if (gameObject.transform.position.y < 0.98f)
         {
             ResetPosition();
         }
