@@ -20,6 +20,11 @@ public class StampHandler : MonoBehaviour
         EventBus.Remove<ItemDroppedEvent>(OnStampDropped);
     }
 
+    private void Update()
+    {
+        CheckBoundaries();
+    }
+
     private void Awake()
     {
         startPosition = transform.position;
@@ -33,7 +38,13 @@ public class StampHandler : MonoBehaviour
     private void OnStampDropped(ItemDroppedEvent itemDroppedEvent) {
         if(itemDroppedEvent.Item != gameObject) { return; }
 
-        if(gameObject.transform.position.y < startPosition.y) {
+        CheckBoundaries();
+    }
+
+    private void CheckBoundaries()
+    {
+        if (gameObject.transform.position.y < startPosition.y)
+        {
             gameObject.transform.position = startPosition;
         }
 
