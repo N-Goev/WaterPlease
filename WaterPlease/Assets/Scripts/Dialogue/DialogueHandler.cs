@@ -1,9 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
-using System;
 
 public class DialogueHandler : MonoBehaviour, IPointerDownHandler
 {
@@ -13,7 +11,7 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
     private TextMeshProUGUI textComponent;
     private CanvasGroup canvasGroup;
 
-    private int index;
+    private int dialogueIndex;
 
     private bool CanShowDialogue = true;
 
@@ -54,14 +52,18 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
 
     private void OnNPCReachedTable(NPCReachedTableEvent npcReachedTableEvent)
     {
-        StartDialogue(npcReachedTableEvent.NPCScriptableObject.Dialogue);
+        InitNewDialogue(npcReachedTableEvent.NPCScriptableObject.Dialogue);
     }
 
-    private void StartDialogue(string[] newDialogue)
+    private void InitNewDialogue(string[] newDialogue)
     {
         textComponent.text = string.Empty;
-        index = 0;
+        dialogueIndex = 0;
         dialogue = newDialogue;
+    }
+
+    private void StartDialogue()
+    {
         StartCoroutine(TypeLine());
 
         ShowDialogueBox();
@@ -69,18 +71,18 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
 
     private IEnumerator TypeLine()
     {
-        foreach (char c in dialogue[index].ToCharArray())
+        foreach (char c in dialogue[dialogueIndex].ToCharArray())
         {
             textComponent.text += c;
             yield return new WaitForSeconds(letterDelay);
         }
     }
 
-    private void GoToNextLine()
+    private void TypeNextLine()
     {
-        if (index < dialogue.Length - 1)
+        if (dialogueIndex < dialogue.Length - 1)
         {
-            index++;
+            dialogueIndex++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
@@ -99,16 +101,25 @@ public class DialogueHandler : MonoBehaviour, IPointerDownHandler
     {
         if (!textComponent) { return; }
         if (dialogue == null) { return; }
-        if (dialogue.Length <=0 ) { return; }
+        if (dialogue.Length <= 0 ) { return; }
 
-        if (textComponent.text == dialogue[index])
+        //Check if this is the first press
+        if (dialogueIndex == 0 && textComponent.text == string.Empty)
         {
-            GoToNextLine();
+            StartDialogue();
+            return;
         }
+
+        //Continue to next dialogue line if current text has been fully typed out
+        if (textComponent.text == dialogue[dialogueIndex])
+        {
+            TypeNextLine();
+        }
+        //Fully type out current line
         else
         {
             StopAllCoroutines();
-            textComponent.text = dialogue[index];
+            textComponent.text = dialogue[dialogueIndex];
         }
     }
 

@@ -22,7 +22,7 @@ public class StampHandler : MonoBehaviour
 
     private void Update()
     {
-        CheckBoundaries();
+        CheckBoundariesHorizontal();
     }
 
     private void Awake()
@@ -30,32 +30,40 @@ public class StampHandler : MonoBehaviour
         startPosition = transform.position;
     }
 
-    private void OnDocumentStamped(DocumentStampedEvent documentStampedEvent)
+    private void ResetPosition()
     {
         transform.position = startPosition;
+    }
+
+    private void OnDocumentStamped(DocumentStampedEvent documentStampedEvent)
+    {
+        ResetPosition();
     }
 
     private void OnStampDropped(ItemDroppedEvent itemDroppedEvent) {
         if(itemDroppedEvent.Item != gameObject) { return; }
 
-        CheckBoundaries();
+        CheckBoundariesVertical();
+        CheckBoundariesHorizontal();
     }
 
-    private void CheckBoundaries()
+    private void CheckBoundariesVertical()
     {
         if (gameObject.transform.position.y < startPosition.y)
         {
-            gameObject.transform.position = startPosition;
+            ResetPosition();
         }
+    }
 
-        if (gameObject.transform.position.x < -1.2)
+    private void CheckBoundariesHorizontal()
+    {
+        if (gameObject.transform.position.x < -1.2f)
         {
-            gameObject.transform.position = startPosition;
+            ResetPosition();
         }
-
-        if (gameObject.transform.position.x > 1.15)
+        else if (gameObject.transform.position.x > 1.15f)
         {
-            gameObject.transform.position = startPosition;
+            ResetPosition();
         }
     }
 }
